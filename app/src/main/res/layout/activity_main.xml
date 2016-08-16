@@ -81,5 +81,12 @@
             android:enabled="true"
             android:background="@android:color/holo_orange_light" />
 
+        <android.support.design.widget.FloatingActionButton
+            android:id="@+id/fab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end|center_horizontal"
+            android:background="@android:color/holo_orange_light" />
+
     </LinearLayout>
 </RelativeLayout>
