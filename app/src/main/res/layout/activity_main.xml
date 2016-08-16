@@ -39,7 +39,7 @@
             android:layout_gravity="center_horizontal"
             android:textSize="30sp"
             android:layout_marginTop="40dp"
-            android:layout_marginBottom="40dp"
+            android:layout_marginBottom="30dp"
             android:textColor="@color/abc_secondary_text_material_light" />
 
         <LinearLayout
@@ -55,24 +55,28 @@
                 android:id="@+id/trueButton"
                 android:layout_gravity="center"
                 android:clickable="true"
-                android:layout_margin="40dp"
                 android:textSize="18sp"
                 android:enabled="true"
                 android:background="@android:color/holo_green_light"
-                android:drawableBottom="@drawable/ic_done_black_48dp" />
+                android:drawableBottom="@drawable/ic_done_black_48dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="40dp" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/falseButtonText"
                 android:id="@+id/falseButton"
-                android:layout_gravity="center"
+                android:layout_gravity="center|right"
                 android:clickable="true"
-                android:layout_margin="40dp"
                 android:textSize="18sp"
                 android:enabled="true"
                 android:background="@color/design_textinput_error_color_light"
-                android:drawableBottom="@drawable/ic_clear_black_48dp"/>
+                android:drawableBottom="@drawable/ic_clear_black_48dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="70dp" />
         </LinearLayout>
 
         <Button
@@ -84,10 +88,11 @@
             android:textSize="18sp"
             android:clickable="true"
             android:enabled="true"
-            android:background="@android:color/holo_orange_light" />
+            android:background="@android:color/holo_orange_light"
+            android:drawableBottom="@drawable/ic_fast_forward_black_48dp" />
 
         <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
+            android:id="@+id/fabButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end|center_horizontal"
@@ -96,7 +101,8 @@
             app:fabSize="normal"
             app:rippleColor="@color/colorRed"
             android:focusable="false"
-            android:focusableInTouchMode="false" />
+            android:focusableInTouchMode="false"
+            android:layout_marginBottom="30dp" />
 
     </LinearLayout>
 </RelativeLayout>
