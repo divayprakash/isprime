@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">IsPrime</string>
+    <string name="question">Is it a prime number?</string>
+    <string name="number">NUMBER</string>
+    <string name="true">True</string>
+    <string name="false">False</string>
+    <string name="next">Next</string>
 </resources>
