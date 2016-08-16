@@ -9,8 +9,30 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="io.github.divayprakash.isprime.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!" />
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="NUMBER"
+            android:id="@+id/numberDisplay"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="50dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Is it a prime number?"
+            android:id="@+id/questionDisplay"
+            android:layout_gravity="center_horizontal"
+            android:textSize="30dp" />
+
+    </LinearLayout>
 </RelativeLayout>
