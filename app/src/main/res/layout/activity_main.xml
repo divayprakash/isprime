@@ -71,7 +71,7 @@
                 android:layout_margin="40dp"
                 android:textSize="18sp"
                 android:enabled="true"
-                android:background="@android:color/holo_red_light"
+                android:background="@color/design_textinput_error_color_light"
                 android:drawableBottom="@drawable/ic_clear_black_48dp"/>
         </LinearLayout>
 
