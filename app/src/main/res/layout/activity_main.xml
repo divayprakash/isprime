@@ -33,7 +33,9 @@
             android:text="@string/questionDisplayText"
             android:id="@+id/questionDisplay"
             android:layout_gravity="center_horizontal"
-            android:textSize="30sp" />
+            android:textSize="30sp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp" />
 
         <LinearLayout
             android:orientation="horizontal"
@@ -51,7 +53,7 @@
                 android:layout_margin="40dp"
                 android:textSize="18sp"
                 android:enabled="true"
-                android:background="@android:color/holo_green_light" />
+                android:background="@android:color/holo_green_light"/>
 
             <Button
                 android:layout_width="wrap_content"
