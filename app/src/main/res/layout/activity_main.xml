@@ -61,7 +61,8 @@
                 android:drawableBottom="@drawable/ic_done_black_48dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp"
-                android:layout_marginLeft="40dp" />
+                android:layout_marginLeft="40dp"
+                android:onClick="onTrue" />
 
             <Button
                 android:layout_width="wrap_content"
@@ -76,7 +77,8 @@
                 android:drawableBottom="@drawable/ic_clear_black_48dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="40dp"
-                android:layout_marginLeft="70dp" />
+                android:layout_marginLeft="70dp"
+                android:onClick="onFalse" />
         </LinearLayout>
 
         <Button
@@ -89,7 +91,8 @@
             android:clickable="true"
             android:enabled="true"
             android:background="@android:color/holo_orange_light"
-            android:drawableBottom="@drawable/ic_fast_forward_black_48dp" />
+            android:drawableBottom="@drawable/ic_fast_forward_black_48dp"
+            android:onClick="onNext" />
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fabButton"

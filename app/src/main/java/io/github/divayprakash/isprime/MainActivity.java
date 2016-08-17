@@ -2,7 +2,9 @@ package io.github.divayprakash.isprime;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
@@ -11,19 +13,22 @@ public class MainActivity extends AppCompatActivity {
 
     public int RANDOM_NUMBER = 1000;
     public boolean IS_PRIME = isPrime();
+    TextView numberDisplay;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        TextView numberDisplay = (TextView)findViewById(R.id.numberDisplay);
-        assert numberDisplay != null;
+        numberDisplay = (TextView)findViewById(R.id.numberDisplay);
+        //assert numberDisplay != null;
         if (savedInstanceState == null) {
-            numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
+            RANDOM_NUMBER = returnRandom();
+            IS_PRIME = isPrime();
+            numberDisplay.setText(Integer.toString(RANDOM_NUMBER));
         }
         else {
             RANDOM_NUMBER = savedInstanceState.getInt("RandomNumber");
-            numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
+            numberDisplay.setText(Integer.toString(RANDOM_NUMBER));
         }
     }
 
@@ -31,6 +36,34 @@ public class MainActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putInt("RandomNumber", RANDOM_NUMBER);
         super.onSaveInstanceState(savedInstanceState);
+    }
+
+    public void onNext(View view) {
+        RANDOM_NUMBER = returnRandom();
+        IS_PRIME = isPrime();
+        numberDisplay.setText(Integer.toString(RANDOM_NUMBER));
+    }
+
+    public void onTrue(View view) {
+        if (IS_PRIME == true)
+        {
+            Toast.makeText(this, "Your answer is correct!", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(this, "Your answer is incorrect!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void onFalse(View view) {
+        if (IS_PRIME == false)
+        {
+            Toast.makeText(this, "Your answer is correct!", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Toast.makeText(this, "Your answer is incorrect!", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public boolean isPrime() {

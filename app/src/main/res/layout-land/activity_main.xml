@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/numberDisplayText"
-                android:id="@+id/textDisplayLand"
+                android:id="@+id/textDisplay"
                 android:layout_gravity="center_vertical"
                 android:textStyle="bold"
                 android:textSize="50sp"
@@ -93,7 +93,8 @@
                     android:background="@android:color/holo_green_light"
                     android:drawableLeft="@drawable/ic_done_black_48dp"
                     android:layout_marginLeft="50dp"
-                    android:layout_marginRight="40dp" />
+                    android:layout_marginRight="40dp"
+                    android:onClick="onTrue" />
 
                 <Button
                     android:layout_width="120dp"
@@ -104,7 +105,8 @@
                     android:textSize="18sp"
                     android:enabled="true"
                     android:background="@color/design_textinput_error_color_light"
-                    android:drawableLeft="@drawable/ic_clear_black_48dp" />
+                    android:drawableLeft="@drawable/ic_clear_black_48dp"
+                    android:onClick="onFalse" />
             </LinearLayout>
 
             <TextView
@@ -125,7 +127,8 @@
                 android:clickable="true"
                 android:enabled="true"
                 android:drawableLeft="@drawable/ic_fast_forward_black_48dp"
-                android:layout_marginLeft="25dp" />
+                android:layout_marginLeft="25dp"
+                android:onClick="onNext" />
 
             <TextView
                 android:layout_width="fill_parent"
