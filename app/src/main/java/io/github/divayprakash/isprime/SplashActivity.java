@@ -24,8 +24,8 @@ public class SplashActivity extends Activity {
     /**
      * <h3>onCreate()</h3>
      * This method is called at the startup of the application. It sets the
-     * view to the XML file associated with this {@link Activity}. Also, an
-     * {@link Intent} instance is created to start the {@link MainActivity} after
+     * view to the XML file associated with this Activity. Also, an
+     * Intent instance is created to start the {@link MainActivity} after
      * a set time duration {@link #SPLASH_TIME}. Thereafter the finish() method
      * is called to end execution of the {@link SplashActivity}.
      * @param savedInstanceState The saved instance state of the application.

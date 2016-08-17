@@ -33,12 +33,12 @@ public class MainActivity extends AppCompatActivity {
      */
     private boolean IS_PRIME = isPrime();
     /**
-     * The {@link TextView} instance representing the object to display the
+     * The TextView instance representing the object to display the
      * random number in.
      */
     private TextView numberDisplay;
     /**
-     * The {@link Vibrator} instance to enable vibration of device when needed.
+     * The Vibrator instance to enable vibration of device when needed.
      */
     private Vibrator vibratorInstance;
 
@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
      * <h3>OnCreate()</h3>
      * This method is called at the startup of the application. It initializes
      * the random number using parameter savedInstanceState and also assigns
-     * the Android VIBRATOR_SERVICE to the {@link Vibrator} instance variable using
+     * the Android VIBRATOR_SERVICE to the Vibrator instance variable using
      * getSystemService().
      * @param savedInstanceState The saved instance state of the application.
      */
@@ -88,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
      * {@link #returnRandom()} method to assign a new random value to the
      * {@link #RANDOM_NUMBER} variable. Thereafter, it calls the {@link #isPrime()}
      * method to determine if {@link #RANDOM_NUMBER} is prime or not. It then sets
-     * the {@link #numberDisplay} {@link TextView}.
+     * the {@link #numberDisplay} TextView.
      * @param view The View instance passed to this method.
      */
     @SuppressWarnings("unused")
@@ -103,8 +103,8 @@ public class MainActivity extends AppCompatActivity {
      * <h3>onTrue()</h3>
      * This is the onClick action handler for the "True" button. It checks the
      * {@link #IS_PRIME} variable to determine if the answer given is correct or not.
-     * Accordingly, it sets the {@link #numberDisplay} {@link TextView} color using
-     * TextView.setTextColor() method. It also displays a {@link Toast} with a
+     * Accordingly, it sets the {@link #numberDisplay} TextView color using
+     * TextView.setTextColor() method. It also displays a Toast with a
      * correct/incorrect message. In case of incorrect answer, it uses Vibrator.vibrate()
      * method to vibrate device for 500ms.
      * @param view The View instance passed to this method.
@@ -126,8 +126,8 @@ public class MainActivity extends AppCompatActivity {
      * <h3>onFalse()</h3>
      * This is the onClick action handler for the "False" button. It checks the
      * {@link #IS_PRIME} variable to determine if the answer given is correct or not.
-     * Accordingly, it sets the {@link #numberDisplay} {@link TextView} color using
-     * TextView.setTextColor() method. It also displays a {@link Toast} with a
+     * Accordingly, it sets the {@link #numberDisplay} TextView color using
+     * TextView.setTextColor() method. It also displays a Toast with a
      * correct/incorrect message. In case of incorrect answer, it uses Vibrator.vibrate()
      * method to vibrate device for 500ms.
      * @param view The View instance passed to this method.
@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * <h3>onExit()</h3>
      * This is the onClick action handler for the "Exit" FAB button. It calls
-     * the Android {@link #finish()} method to safely end application execution and
+     * the Android finish() method to safely end application execution and
      * thereafter calls System.exit() to clean up variables etc.
      * @param view The View instance passed to this method.
      */
@@ -160,9 +160,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * <h3>isprime()</h3>
-     * This method checks if the {@Link #RANDOM_NUMBER} is prime or not and returns
-     * a {@Link Boolean} value.
-     * @return {@Link Boolean} value
+     * This method checks if the {@link #RANDOM_NUMBER} is prime or not and returns
+     * a {@link Boolean} value.
+     * @return {@link Boolean} value
      */
     private boolean isPrime() {
         for (int Divisor = 2; Divisor < RANDOM_NUMBER / 2; Divisor++) {
@@ -174,8 +174,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * <h3>returnRandom()</h3>
      * This method returns a Random intger in the range 2 to 1000 using
-     * {@Link ThreadLocalRandom.current().nextInt()}.
-     * @return {@Link int} value
+     * ThreadLocalRandom.current().nextInt().
+     * @return {@link int} value
      */
     private int returnRandom() {
         int MAX = 1000;
