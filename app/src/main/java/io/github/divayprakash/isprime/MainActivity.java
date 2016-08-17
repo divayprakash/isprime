@@ -1,11 +1,13 @@
 package io.github.divayprakash.isprime;
 
+import android.content.Context;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.os.Vibrator;
 
 import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
@@ -15,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private int RANDOM_NUMBER = 1000;
     private boolean IS_PRIME = isPrime();
     private TextView numberDisplay;
+    private Vibrator v;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
             numberDisplay.setTextColor(Color.parseColor("#FF000000"));
         }
+        v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
     }
 
     @Override
@@ -56,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         else {
             Toast.makeText(this, "Your answer is incorrect!", Toast.LENGTH_SHORT).show();
             numberDisplay.setTextColor(Color.parseColor("#FFD50000"));
+            v.vibrate(500);
         }
     }
 
@@ -68,6 +73,7 @@ public class MainActivity extends AppCompatActivity {
         else {
             Toast.makeText(this, "Your answer is incorrect!", Toast.LENGTH_SHORT).show();
             numberDisplay.setTextColor(Color.parseColor("#FFD50000"));
+            v.vibrate(500);
         }
     }
 
