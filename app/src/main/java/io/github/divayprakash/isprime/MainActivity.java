@@ -52,8 +52,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onTrue(View view) {
-        if (IS_PRIME)
-        {
+        if (IS_PRIME) {
             Toast.makeText(this, "Your answer is correct!", Toast.LENGTH_SHORT).show();
             numberDisplay.setTextColor(Color.parseColor("#FF99CC00"));
         }
@@ -65,8 +64,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onFalse(View view) {
-        if (!IS_PRIME)
-        {
+        if (!IS_PRIME) {
             Toast.makeText(this, "Your answer is correct!", Toast.LENGTH_SHORT).show();
             numberDisplay.setTextColor(Color.parseColor("#FF99CC00"));
         }
@@ -94,4 +92,5 @@ public class MainActivity extends AppCompatActivity {
         int MIN = 2;
         return ThreadLocalRandom.current().nextInt(MIN, MAX + 1);
     }
+    
 }
