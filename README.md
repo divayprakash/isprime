@@ -1,7 +1,8 @@
-![logo](https://github.com/divayprakash/isprime/blob/master/app/src/main/res/mipmap-xxhdpi/ic_launcher.png)
-# Prime or Not
+<img src="https://github.com/divayprakash/isprime/blob/master/logo.png" length="476" width="200">  
 
-Simple Android app to ask IsPrime questions, created as an introduction to Android app development during Mobile Computing course at [IIIT Delhi](http://iiitd.ac.in/). This is an [Android Studio](https://developer.android.com/studio/index.html) project.
+## What is it?
+
+Simple Android app to ask IsPrime questions, created as an introduction to Android app development during Mobile Computing course at [IIIT Delhi](http://iiitd.ac.in/). The project was created using [Android Studio](https://developer.android.com/studio/index.html).
 
 ## Screenshots
 
