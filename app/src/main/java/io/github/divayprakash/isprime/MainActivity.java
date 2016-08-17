@@ -13,9 +13,9 @@ import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * <h1>Prime or Not</h1>
- * The MainActivity implements all the control logic for the Prime or Not
- * Android app.
+ * <h1>MainActivity</h1>
+ * The MainActivity class implements all the control logic for the 'Prime or
+ * Not' Android application.
  *
  * @author Divay Prakash
  * @version 1.0
@@ -44,9 +44,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * <h3>OnCreate()</h3>
-     * This method is called at the startup of the app. It initializes the
-     * random number using parameter {@Link #savedInstanceState} and also assigns the
-     * Android {@Link VIBRATOR_SERVICE} to the {@Link Vibrator} instance variable.
+     * This method is called at the startup of the application. It initializes
+     * the random number using parameter {@Link #savedInstanceState} and also assigns
+     * the Android {@Link VIBRATOR_SERVICE} to the {@Link Vibrator} instance variable.
      * @param savedInstanceState The saved instance state of the application.
      */
     @Override
