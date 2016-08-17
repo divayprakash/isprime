@@ -124,11 +124,11 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * <h3>onFalse()</h3>
-     * This is the {@Link onClick} action handler for the "False" button. It checks the
-     * {@Link #IS_PRIME} variable to determine if the answer given is correct or not.
-     * Accordingly, it sets the {@Link #numberDisplay} {@Link TextView} color using
-     * {@Link TextView.setTextColor()} method. It also displays a {@Link Toast} with a
-     * correct/incorrect message. In case of incorrect answer, it uses {@Link Vibrator.vibrate()}
+     * This is the onClick action handler for the "False" button. It checks the
+     * {@link #IS_PRIME} variable to determine if the answer given is correct or not.
+     * Accordingly, it sets the {@link #numberDisplay} {@link TextView} color using
+     * TextView.setTextColor() method. It also displays a {@link Toast} with a
+     * correct/incorrect message. In case of incorrect answer, it uses Vibrator.vibrate()
      * method to vibrate device for 500ms.
      * @param view The View instance passed to this method.
      */
@@ -147,9 +147,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * <h3>onExit()</h3>
-     * This is the {@Link onClick} action handler for the "Exit" FAB button. It calls
-     * the Android {@Link finish()} method to safely end application execution and
-     * thereafter calls {@Link System.exit()} to clean up variables etc.
+     * This is the onClick action handler for the "Exit" FAB button. It calls
+     * the Android {@link #finish()} method to safely end application execution and
+     * thereafter calls System.exit() to clean up variables etc.
      * @param view The View instance passed to this method.
      */
     @SuppressWarnings("unused")
