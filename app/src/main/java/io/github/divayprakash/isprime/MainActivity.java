@@ -40,13 +40,14 @@ public class MainActivity extends AppCompatActivity {
     /**
      * The {@link Vibrator} instance to enable vibration of device when needed.
      */
-    private Vibrator v;
+    private Vibrator vibratorInstance;
 
     /**
      * <h3>OnCreate()</h3>
      * This method is called at the startup of the application. It initializes
-     * the random number using parameter {@Link #savedInstanceState} and also assigns
-     * the Android {@Link VIBRATOR_SERVICE} to the {@Link Vibrator} instance variable.
+     * the random number using parameter savedInstanceState and also assigns
+     * the Android VIBRATOR_SERVICE to the {@link Vibrator} instance variable using
+     * getSystemService().
      * @param savedInstanceState The saved instance state of the application.
      */
     @Override
@@ -65,7 +66,7 @@ public class MainActivity extends AppCompatActivity {
             numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
             numberDisplay.setTextColor(Color.parseColor("#FF000000"));
         }
-        v = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+        vibratorInstance = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
     }
 
     /**
@@ -83,11 +84,11 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * <h3>onNext()</h3>
-     * This is the {@Link onClick} action handler for the "Next" button. It calls the
+     * This is the onClick action handler for the "Next" button. It calls the
      * {@link #returnRandom()} method to assign a new random value to the
-     * {@Link #RANDOM_NUMBER} variable. Thereafter, it calls the {@Link #isprime()}
-     * method to determine if {@Link #RANDOM_NUMBER} is prime or not. It then sets
-     * the {@Link #numberDisplay} {@Link TextView}.
+     * {@link #RANDOM_NUMBER} variable. Thereafter, it calls the {@link #isPrime()}
+     * method to determine if {@link #RANDOM_NUMBER} is prime or not. It then sets
+     * the {@link #numberDisplay} {@link TextView}.
      * @param view The View instance passed to this method.
      */
     @SuppressWarnings("unused")
@@ -100,11 +101,11 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * <h3>onTrue()</h3>
-     * This is the {@Link onClick} action handler for the "True" button. It checks the
-     * {@Link #IS_PRIME} variable to determine if the answer given is correct or not.
-     * Accordingly, it sets the {@Link #numberDisplay} {@Link TextView} color using
-     * {@Link TextView.setTextColor()} method. It also displays a {@Link Toast} with a
-     * correct/incorrect message. In case of incorrect answer, it uses {@Link Vibrator.vibrate()}
+     * This is the onClick action handler for the "True" button. It checks the
+     * {@link #IS_PRIME} variable to determine if the answer given is correct or not.
+     * Accordingly, it sets the {@link #numberDisplay} {@link TextView} color using
+     * TextView.setTextColor() method. It also displays a {@link Toast} with a
+     * correct/incorrect message. In case of incorrect answer, it uses Vibrator.vibrate()
      * method to vibrate device for 500ms.
      * @param view The View instance passed to this method.
      */
@@ -117,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
         else {
             Toast.makeText(this, "Your answer is incorrect!", Toast.LENGTH_SHORT).show();
             numberDisplay.setTextColor(Color.parseColor("#FFD50000"));
-            v.vibrate(500);
+            vibratorInstance.vibrate(500);
         }
     }
 
@@ -140,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
         else {
             Toast.makeText(this, "Your answer is incorrect!", Toast.LENGTH_SHORT).show();
             numberDisplay.setTextColor(Color.parseColor("#FFD50000"));
-            v.vibrate(500);
+            vibratorInstance.vibrate(500);
         }
     }
 
