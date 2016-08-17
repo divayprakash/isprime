@@ -35,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="@string/numberDisplayText"
-                android:id="@+id/textDisplay"
+                android:id="@+id/numberDisplay"
                 android:layout_gravity="center_vertical"
                 android:textStyle="bold"
                 android:textSize="50sp"
