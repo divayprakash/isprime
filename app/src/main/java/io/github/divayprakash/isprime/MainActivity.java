@@ -23,16 +23,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         numberDisplay = (TextView)findViewById(R.id.numberDisplay);
-        //assert numberDisplay != null;
         if (savedInstanceState == null) {
             RANDOM_NUMBER = returnRandom();
             IS_PRIME = isPrime();
-            numberDisplay.setText(Integer.toString(RANDOM_NUMBER));
+            numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
             numberDisplay.setTextColor(Color.parseColor("#FF000000"));
         }
         else {
             RANDOM_NUMBER = savedInstanceState.getInt("RandomNumber");
-            numberDisplay.setText(Integer.toString(RANDOM_NUMBER));
+            numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
             numberDisplay.setTextColor(Color.parseColor("#FF000000"));
         }
     }
@@ -46,12 +45,12 @@ public class MainActivity extends AppCompatActivity {
     public void onNext(View view) {
         RANDOM_NUMBER = returnRandom();
         IS_PRIME = isPrime();
-        numberDisplay.setText(Integer.toString(RANDOM_NUMBER));
+        numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
         numberDisplay.setTextColor(Color.parseColor("#FF000000"));
     }
 
     public void onTrue(View view) {
-        if (IS_PRIME == true)
+        if (IS_PRIME)
         {
             Toast.makeText(this, "Your answer is correct!", Toast.LENGTH_SHORT).show();
             numberDisplay.setTextColor(Color.parseColor("#FF99CC00"));
@@ -63,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onFalse(View view) {
-        if (IS_PRIME == false)
+        if (!IS_PRIME)
         {
             Toast.makeText(this, "Your answer is correct!", Toast.LENGTH_SHORT).show();
             numberDisplay.setTextColor(Color.parseColor("#FF99CC00"));
