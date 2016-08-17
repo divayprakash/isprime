@@ -16,18 +16,18 @@ import android.os.Handler;
 public class SplashActivity extends Activity {
 
     /**
-     * The {@link int} variable representing the time in milliseconds for which
-     * the splash screen is shown in the application.
+     * int variable representing the time in milliseconds for which the splash
+     * screen is shown in the application.
      */
     private static final int SPLASH_TIME = 3000;
 
     /**
      * <h3>onCreate()</h3>
      * This method is called at the startup of the application. It sets the
-     * view to the XML file associated with this Activity. Also, an
-     * Intent instance is created to start the {@link MainActivity} after
-     * a set time duration {@link #SPLASH_TIME}. Thereafter the finish() method
-     * is called to end execution of the {@link SplashActivity}.
+     * view to the XML file associated with this Activity. Also, an Intent
+     * instance is created to start the MainActivity after a set time duration
+     * SPLASH_TIME. Thereafter the finish() method is called to end execution
+     * of the SplashActivity.
      * @param savedInstanceState The saved instance state of the application.
      */
     @Override
