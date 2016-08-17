@@ -3,7 +3,7 @@
     <string name="questionDisplayText">Is it a prime number?</string>
     <string name="questionDisplayTextLandOne">Is it a prime</string>
     <string name="questionDisplayTextLandTwo">number?</string>
-    <string name="numberDisplayText">NUMBER</string>
+    <string name="numberDisplayText">1000</string>
     <string name="trueButtonText">True</string>
     <string name="falseButtonText">False</string>
     <string name="nextButtonText">Next</string>
