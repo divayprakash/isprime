@@ -44,6 +44,7 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(savedInstanceState);
     }
 
+    @SuppressWarnings("unused")
     public void onNext(View view) {
         RANDOM_NUMBER = returnRandom();
         IS_PRIME = isPrime();
@@ -51,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         numberDisplay.setTextColor(Color.parseColor("#FF000000"));
     }
 
+    @SuppressWarnings("unused")
     public void onTrue(View view) {
         if (IS_PRIME) {
             Toast.makeText(this, "Your answer is correct!", Toast.LENGTH_SHORT).show();
@@ -63,6 +65,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressWarnings("unused")
     public void onFalse(View view) {
         if (!IS_PRIME) {
             Toast.makeText(this, "Your answer is correct!", Toast.LENGTH_SHORT).show();
@@ -75,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    @SuppressWarnings("unused")
     public void onExit(View view) {
         finish();
         System.exit(0);
