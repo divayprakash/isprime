@@ -23,22 +23,22 @@ import java.util.concurrent.ThreadLocalRandom;
 public class MainActivity extends AppCompatActivity {
 
     /**
-     * The {@link int} instance representing the random number currently being
+     * int variable representing the random number currently being
      * shown in the app.
      */
     private int RANDOM_NUMBER = 1000;
     /**
-     * The {@link Boolean} instance representing if the currently displayed
-     * number is prime or not.
+     * Boolean variable representing if the currently displayed number is
+     * prime or not.
      */
     private boolean IS_PRIME = isPrime();
     /**
-     * The TextView instance representing the object to display the
-     * random number in.
+     * TextView variable representing the object to display the random number
+     * in.
      */
     private TextView numberDisplay;
     /**
-     * The Vibrator instance to enable vibration of device when needed.
+     * Vibrator instance variable to enable vibration of device when needed.
      */
     private Vibrator vibratorInstance;
 
@@ -85,10 +85,9 @@ public class MainActivity extends AppCompatActivity {
     /**
      * <h3>onNext()</h3>
      * This is the onClick action handler for the "Next" button. It calls the
-     * {@link #returnRandom()} method to assign a new random value to the
-     * {@link #RANDOM_NUMBER} variable. Thereafter, it calls the {@link #isPrime()}
-     * method to determine if {@link #RANDOM_NUMBER} is prime or not. It then sets
-     * the {@link #numberDisplay} TextView.
+     * returnRandom() method to assign a new random value to the RANDOM_NUMBER
+     * variable. Thereafter, it calls the isPrime() method to determine if
+     * RANDOM_NUMBER is prime or not. It then sets the numberDisplay TextView.
      * @param view The View instance passed to this method.
      */
     @SuppressWarnings("unused")
@@ -102,8 +101,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * <h3>onTrue()</h3>
      * This is the onClick action handler for the "True" button. It checks the
-     * {@link #IS_PRIME} variable to determine if the answer given is correct or not.
-     * Accordingly, it sets the {@link #numberDisplay} TextView color using
+     * IS_PRIME variable to determine if the answer given is correct or not.
+     * Accordingly, it sets the numberDisplay TextView color using
      * TextView.setTextColor() method. It also displays a Toast with a
      * correct/incorrect message. In case of incorrect answer, it uses Vibrator.vibrate()
      * method to vibrate device for 500ms.
