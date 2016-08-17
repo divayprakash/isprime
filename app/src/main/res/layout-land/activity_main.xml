@@ -21,7 +21,8 @@
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp">
 
             <TextView
                 android:layout_width="fill_parent"
@@ -48,12 +49,24 @@
                 android:textSize="40sp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/questionDisplayText"
+                android:text="@string/questionDisplayTextLandOne"
                 android:id="@+id/questionDisplayLand"
-                android:textColor="@color/abc_secondary_text_material_light" />
+                android:textColor="@color/abc_secondary_text_material_light"
+                android:textAlignment="center"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/questionDisplayTextLandTwo"
+                android:id="@+id/textView"
+                android:textColor="@color/abc_secondary_text_material_light"
+                android:textAlignment="center"
+                android:textSize="30sp" />
         </LinearLayout>
 
         <LinearLayout
