@@ -12,11 +12,11 @@ import java.util.concurrent.ThreadLocalRandom;
 
 public class MainActivity extends AppCompatActivity {
 
-    public int RANDOM_NUMBER = 1000;
-    public boolean IS_PRIME = isPrime();
-    TextView numberDisplay;
-    final int MIN = 2;
-    final int MAX = 1000;
+    private int RANDOM_NUMBER = 1000;
+    private boolean IS_PRIME = isPrime();
+    private TextView numberDisplay;
+    private final int MIN = 2;
+    private final int MAX = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,14 +78,14 @@ public class MainActivity extends AppCompatActivity {
         System.exit(0);
     }
 
-    public boolean isPrime() {
+    private boolean isPrime() {
         for (int Divisor = 2; Divisor < RANDOM_NUMBER / 2; Divisor++) {
             if (RANDOM_NUMBER % Divisor == 0) return false;
         }
         return true;
     }
 
-    public int returnRandom() {
+    private int returnRandom() {
         return ThreadLocalRandom.current().nextInt(MIN, MAX + 1);
     }
 }
