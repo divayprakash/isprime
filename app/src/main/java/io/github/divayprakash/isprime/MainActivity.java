@@ -15,8 +15,6 @@ public class MainActivity extends AppCompatActivity {
     private int RANDOM_NUMBER = 1000;
     private boolean IS_PRIME = isPrime();
     private TextView numberDisplay;
-    private final int MIN = 2;
-    private final int MAX = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -86,6 +84,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private int returnRandom() {
+        int MAX = 1000;
+        int MIN = 2;
         return ThreadLocalRandom.current().nextInt(MIN, MAX + 1);
     }
 }
