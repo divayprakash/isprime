@@ -10,10 +10,8 @@ Simple Android app to ask IsPrime questions, created as an introduction to Andro
 <img src="https://github.com/divayprakash/isprime/blob/master/screenshots/portraitQuestionFramed.png" width="200" length="360">
 <img src="https://github.com/divayprakash/isprime/blob/master/screenshots/portraitIncorrectFramed.png" width="200" length="360">
 <img src="https://github.com/divayprakash/isprime/blob/master/screenshots/portraitCorrectFramed.png" width="200" length="360">
-
 <img src="https://github.com/divayprakash/isprime/blob/master/screenshots/landscapeCorrectFramed.png" width="360" length="200">
 <img src="https://github.com/divayprakash/isprime/blob/master/screenshots/landscapeQuestionFramed.png" width="360" length="200">
-
 <img src="https://github.com/divayprakash/isprime/blob/master/screenshots/landscapeIncorrectFramed.png" width="360" length="200">
 
 ## Attributions
