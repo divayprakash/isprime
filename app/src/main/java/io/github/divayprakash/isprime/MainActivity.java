@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
     public int RANDOM_NUMBER = 1000;
     public boolean IS_PRIME = isPrime();
     TextView numberDisplay;
+    final int MIN = 2;
+    final int MAX = 1000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void onExit(View view) {
+        finish();
+        System.exit(0);
+    }
+
     public boolean isPrime() {
         for (int Divisor = 2; Divisor < RANDOM_NUMBER / 2; Divisor++) {
             if (RANDOM_NUMBER % Divisor == 0) return false;
@@ -80,8 +87,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public int returnRandom() {
-        int MIN = 2;
-        int MAX = 1000;
         return ThreadLocalRandom.current().nextInt(MIN, MAX + 1);
     }
 }
