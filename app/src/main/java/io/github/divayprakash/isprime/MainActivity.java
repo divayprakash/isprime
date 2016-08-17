@@ -104,8 +104,8 @@ public class MainActivity extends AppCompatActivity {
      * IS_PRIME variable to determine if the answer given is correct or not.
      * Accordingly, it sets the numberDisplay TextView color using
      * TextView.setTextColor() method. It also displays a Toast with a
-     * correct/incorrect message. In case of incorrect answer, it uses Vibrator.vibrate()
-     * method to vibrate device for 500ms.
+     * correct/incorrect message. In case of incorrect answer, it uses
+     * Vibrator.vibrate() method to vibrate device for 500ms.
      * @param view The View instance passed to this method.
      */
     @SuppressWarnings("unused")
@@ -124,11 +124,11 @@ public class MainActivity extends AppCompatActivity {
     /**
      * <h3>onFalse()</h3>
      * This is the onClick action handler for the "False" button. It checks the
-     * {@link #IS_PRIME} variable to determine if the answer given is correct or not.
-     * Accordingly, it sets the {@link #numberDisplay} TextView color using
+     * IS_PRIME variable to determine if the answer given is correct or not.
+     * Accordingly, it sets the numberDisplay TextView color using
      * TextView.setTextColor() method. It also displays a Toast with a
-     * correct/incorrect message. In case of incorrect answer, it uses Vibrator.vibrate()
-     * method to vibrate device for 500ms.
+     * correct/incorrect message. In case of incorrect answer, it uses
+     * Vibrator.vibrate() method to vibrate device for 500ms.
      * @param view The View instance passed to this method.
      */
     @SuppressWarnings("unused")
@@ -159,9 +159,9 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * <h3>isprime()</h3>
-     * This method checks if the {@link #RANDOM_NUMBER} is prime or not and returns
-     * a {@link Boolean} value.
-     * @return {@link Boolean} value
+     * This method checks if the RANDOM_NUMBER is prime or not and returns a
+     * Boolean value.
+     * @return Boolean value
      */
     private boolean isPrime() {
         for (int Divisor = 2; Divisor < RANDOM_NUMBER / 2; Divisor++) {
@@ -174,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
      * <h3>returnRandom()</h3>
      * This method returns a Random intger in the range 2 to 1000 using
      * ThreadLocalRandom.current().nextInt().
-     * @return {@link int} value
+     * @return int value
      */
     private int returnRandom() {
         int MAX = 1000;
