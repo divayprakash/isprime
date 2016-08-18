@@ -92,7 +92,6 @@
             android:id="@+id/fabButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end|center_horizontal"
             android:clickable="true"
             android:src="@drawable/ic_exit_to_app_black_48dp"
             app:fabSize="normal"
@@ -100,10 +99,10 @@
             android:focusable="false"
             android:focusableInTouchMode="false"
             android:onClick="onExit"
-            android:layout_below="@id/nextbutton"
             android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginBottom="20dp"/>
     </RelativeLayout>
 
 </RelativeLayout>
