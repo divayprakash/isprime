@@ -172,7 +172,7 @@ public class MainActivity extends AppCompatActivity {
 
     /**
      * <h3>returnRandom()</h3>
-     * This method returns a Random intger in the range 2 to 1000 using
+     * This method returns a Random integer in the range 2 to 1000 using
      * ThreadLocalRandom.current().nextInt().
      * @return int value
      */
