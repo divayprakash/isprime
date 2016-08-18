@@ -7,7 +7,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="io.github.divayprakash.isprime.MainActivity">
 
-    <LinearLayout
+    <RelativeLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,22 +16,17 @@
         android:weightSum="1"
         android:background="@drawable/background">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="@string/numberDisplayText"
-                android:id="@+id/numberDisplay"
-                android:layout_gravity="center_horizontal"
-                android:textStyle="bold"
-                android:textSize="50sp"
-                android:layout_marginTop="40dp" />
-        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/numberDisplayText"
+            android:id="@+id/numberDisplay"
+            android:layout_gravity="center_horizontal"
+            android:textStyle="bold"
+            android:textSize="50sp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,49 +35,42 @@
             android:id="@+id/questionDisplay"
             android:layout_gravity="center_horizontal"
             android:textSize="30sp"
-            android:layout_marginTop="40dp"
-            android:layout_marginBottom="30dp"
-            android:textColor="@color/abc_secondary_text_material_light" />
+            android:textColor="@color/abc_secondary_text_material_light"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/numberDisplay"
+            android:layout_marginTop="40dp"/>
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
+        <Button
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="0.15"
-            tools:ignore="InefficientWeight">
+            android:text="@string/trueButtonText"
+            android:id="@+id/trueButton"
+            android:clickable="true"
+            android:textSize="18sp"
+            android:enabled="true"
+            android:background="@android:color/holo_green_light"
+            android:drawableBottom="@drawable/ic_done_black_48dp"
+            android:onClick="onTrue"
+            android:layout_below="@id/questionDisplay"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="40dp"/>
 
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/trueButtonText"
-                android:id="@+id/trueButton"
-                android:layout_gravity="center"
-                android:clickable="true"
-                android:textSize="18sp"
-                android:enabled="true"
-                android:background="@android:color/holo_green_light"
-                android:drawableBottom="@drawable/ic_done_black_48dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="40dp"
-                android:layout_marginLeft="55dp"
-                android:onClick="onTrue" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/falseButtonText"
-                android:id="@+id/falseButton"
-                android:layout_gravity="center|right"
-                android:clickable="true"
-                android:textSize="18sp"
-                android:enabled="true"
-                android:background="@color/design_textinput_error_color_light"
-                android:drawableBottom="@drawable/ic_clear_black_48dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="40dp"
-                android:layout_marginLeft="70dp"
-                android:onClick="onFalse" />
-        </LinearLayout>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/falseButtonText"
+            android:id="@+id/falseButton"
+            android:layout_gravity="center|right"
+            android:clickable="true"
+            android:textSize="18sp"
+            android:enabled="true"
+            android:background="@color/design_textinput_error_color_light"
+            android:drawableBottom="@drawable/ic_clear_black_48dp"
+            android:onClick="onFalse"
+            android:layout_below="@id/questionDisplay"
+            android:layout_marginRight="60dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="40dp"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -95,7 +83,10 @@
             android:enabled="true"
             android:background="@android:color/holo_orange_light"
             android:drawableBottom="@drawable/ic_fast_forward_black_48dp"
-            android:onClick="onNext" />
+            android:onClick="onNext"
+            android:layout_below="@id/trueButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"/>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fabButton"
@@ -108,10 +99,11 @@
             app:rippleColor="@color/colorRed"
             android:focusable="false"
             android:focusableInTouchMode="false"
-            android:layout_marginBottom="5dp"
             android:onClick="onExit"
-            android:layout_marginRight="20dp" />
-
-    </LinearLayout>
+            android:layout_below="@id/nextbutton"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="40dp"/>
+    </RelativeLayout>
 
 </RelativeLayout>
