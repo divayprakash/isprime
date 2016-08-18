@@ -13,7 +13,6 @@ import java.util.Locale;
 import java.util.concurrent.ThreadLocalRandom;
 
 /**
- * <h1>MainActivity</h1>
  * The MainActivity class implements all the control logic for the 'Prime or
  * Not' Android application.
  *
@@ -43,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
     private Vibrator vibratorInstance;
 
     /**
-     * <h3>OnCreate()</h3>
      * This method is called at the startup of the application. It initializes
      * the random number using parameter savedInstanceState and also assigns
      * the Android VIBRATOR_SERVICE to the Vibrator instance variable using
@@ -70,7 +68,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * <h3>OnSaveInstanceState()</h3>
      * This method is called during application destruction and is used to
      * store the instance state so as to be able to restore it at the next
      * initialization.
@@ -83,7 +80,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * <h3>onNext()</h3>
      * This is the onClick action handler for the "Next" button. It calls the
      * returnRandom() method to assign a new random value to the RANDOM_NUMBER
      * variable. Thereafter, it calls the isPrime() method to determine if
@@ -99,7 +95,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * <h3>onTrue()</h3>
      * This is the onClick action handler for the "True" button. It checks the
      * IS_PRIME variable to determine if the answer given is correct or not.
      * Accordingly, it sets the numberDisplay TextView color using
@@ -122,7 +117,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * <h3>onFalse()</h3>
      * This is the onClick action handler for the "False" button. It checks the
      * IS_PRIME variable to determine if the answer given is correct or not.
      * Accordingly, it sets the numberDisplay TextView color using
@@ -145,7 +139,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * <h3>onExit()</h3>
      * This is the onClick action handler for the "Exit" FAB button. It calls
      * the Android finish() method to safely end application execution and
      * thereafter calls System.exit() to clean up variables etc.
@@ -158,7 +151,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * <h3>isprime()</h3>
      * This method checks if the RANDOM_NUMBER is prime or not and returns a
      * Boolean value.
      * @return Boolean value
@@ -171,7 +163,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * <h3>returnRandom()</h3>
      * This method returns a Random integer in the range 2 to 1000 using
      * ThreadLocalRandom.current().nextInt().
      * @return int value

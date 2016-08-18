@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 
 /**
- * <h1>SplashActivity</h1>
  * The SplashActivity class implements the control logic for the splash screen
  * displayed at the beginning of the 'Prime or Not' application.
  *
@@ -22,7 +21,6 @@ public class SplashActivity extends Activity {
     private static final int SPLASH_TIME = 3000;
 
     /**
-     * <h3>onCreate()</h3>
      * This method is called at the startup of the application. It sets the
      * view to the XML file associated with this Activity. Also, an Intent
      * instance is created to start the MainActivity after a set time duration
