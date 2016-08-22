@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.os.Vibrator;
@@ -42,10 +41,6 @@ public class MainActivity extends AppCompatActivity {
      */
     private Vibrator vibratorInstance;
 
-    private Button cheatButton;
-    private Button cheatButtonLand;
-    private int CHEAT_BUTTON_STATE;
-
     /**
      * This method is called at the startup of the application. It initializes
      * the random number using parameter savedInstanceState and also assigns
@@ -58,36 +53,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         numberDisplay = (TextView)findViewById(R.id.numberDisplay);
-        cheatButton = (Button)findViewById(R.id.cheatButton);
-        cheatButtonLand = (Button)findViewById(R.id.cheatButtonLand);
         if (savedInstanceState == null) {
             RANDOM_NUMBER = returnRandom();
             IS_PRIME = isPrime();
             numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
             numberDisplay.setTextColor(Color.parseColor("#FF000000"));
-            CHEAT_BUTTON_STATE = 0;
-            //cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
-            //cheatButtonLand.setBackgroundColor(Color.parseColor("#FFAA66CC"));
         }
         else {
             RANDOM_NUMBER = savedInstanceState.getInt("RandomNumber");
             numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
             numberDisplay.setTextColor(Color.parseColor("#FF000000"));
-            CHEAT_BUTTON_STATE = savedInstanceState.getInt("CheatState");
-            switch (CHEAT_BUTTON_STATE) {
-                case 0:
-                    cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
-                    cheatButtonLand.setBackgroundColor(Color.parseColor("#FFAA66CC"));
-                    break;
-                case 1:
-                    cheatButton.setBackgroundColor(Color.parseColor("#FF99CC00"));
-                    cheatButtonLand.setBackgroundColor(Color.parseColor("#FF99CC00"));
-                    break;
-                case 2:
-                    cheatButton.setBackgroundColor(Color.parseColor("#FFD50000"));
-                    cheatButtonLand.setBackgroundColor(Color.parseColor("#FFD50000"));
-                    break;
-            }
         }
         vibratorInstance = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
     }
@@ -101,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putInt("RandomNumber", RANDOM_NUMBER);
-        savedInstanceState.putInt("CheatState", CHEAT_BUTTON_STATE);
         super.onSaveInstanceState(savedInstanceState);
     }
 
@@ -114,9 +88,6 @@ public class MainActivity extends AppCompatActivity {
      */
     @SuppressWarnings("unused")
     public void onNext(View view) {
-        CHEAT_BUTTON_STATE = 0;
-        cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
-        cheatButtonLand.setBackgroundColor(Color.parseColor("#FFAA66CC"));
         RANDOM_NUMBER = returnRandom();
         IS_PRIME = isPrime();
         numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
@@ -134,11 +105,6 @@ public class MainActivity extends AppCompatActivity {
      */
     @SuppressWarnings("unused")
     public void onTrue(View view) {
-        if (CHEAT_BUTTON_STATE != 0) {
-            cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
-            cheatButtonLand.setBackgroundColor(Color.parseColor("#FFAA66CC"));
-            CHEAT_BUTTON_STATE = 0;
-        }
         if (IS_PRIME) {
             Toast.makeText(this, "Your answer is correct!", Toast.LENGTH_SHORT).show();
             numberDisplay.setTextColor(Color.parseColor("#FF99CC00"));
@@ -161,11 +127,6 @@ public class MainActivity extends AppCompatActivity {
      */
     @SuppressWarnings("unused")
     public void onFalse(View view) {
-        if (CHEAT_BUTTON_STATE != 0) {
-            cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
-            cheatButtonLand.setBackgroundColor(Color.parseColor("#FFAA66CC"));
-            CHEAT_BUTTON_STATE = 0;
-        }
         if (!IS_PRIME) {
             Toast.makeText(this, "Your answer is correct!", Toast.LENGTH_SHORT).show();
             numberDisplay.setTextColor(Color.parseColor("#FF99CC00"));
@@ -189,15 +150,11 @@ public class MainActivity extends AppCompatActivity {
     public void onCheat(View view) {
         if (IS_PRIME) {
             Toast.makeText(this, "The correct answer is TRUE", Toast.LENGTH_SHORT).show();
-            CHEAT_BUTTON_STATE = 1;
-            cheatButton.setBackgroundColor(Color.parseColor("#FF99CC00"));
-            cheatButtonLand.setBackgroundColor(Color.parseColor("#FF99CC00"));
+            numberDisplay.setTextColor(Color.parseColor("#FF99CC00"));
         }
         else {
             Toast.makeText(this, "The correct answer is FALSE", Toast.LENGTH_SHORT).show();
-            CHEAT_BUTTON_STATE = 2;
-            cheatButton.setBackgroundColor(Color.parseColor("#FFD50000"));
-            cheatButtonLand.setBackgroundColor(Color.parseColor("#FFD50000"));
+            numberDisplay.setTextColor(Color.parseColor("#FFD50000"));
         }
     }
 
