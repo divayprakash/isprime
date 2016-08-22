@@ -137,6 +137,19 @@ public class MainActivity extends AppCompatActivity {
             vibratorInstance.vibrate(500);
         }
     }
+    
+    public void onCheat(View view) {
+        if (IS_PRIME) {
+            Toast.makeText(this, "The correct answer is TRUE", Toast.LENGTH_SHORT).show();
+            numberDisplay.setTextColor(Color.parseColor("#FF99CC00"));
+        }
+        else {
+            Toast.makeText(this, "The correct answer is FALSE", Toast.LENGTH_SHORT).show();
+            numberDisplay.setTextColor(Color.parseColor("#FFD50000"));
+        }
+    }
+
+    @SuppressWarnings("unused")
 
     /**
      * This is the onClick action handler for the "Exit" FAB button. It calls

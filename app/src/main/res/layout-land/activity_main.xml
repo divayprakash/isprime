@@ -121,6 +121,7 @@
             android:background="@android:color/holo_purple"
             android:clickable="true"
             android:enabled="true"
+            android:onClick="onCheat"
             android:drawableLeft="@drawable/ic_thumb_up_black_48dp"
             android:layout_toRightOf="@id/hintButtonLand"
             android:layout_below="@id/falseButtonLand"

@@ -119,6 +119,7 @@
             android:layout_height="wrap_content"
             android:text="@string/cheatButtonText"
             android:id="@+id/cheatButton"
+            android:onClick="onCheat"
             android:background="@android:color/holo_purple"
             android:textSize="18sp"
             android:clickable="true"
