@@ -38,7 +38,7 @@
             android:textColor="@color/abc_secondary_text_material_light"
             android:layout_centerHorizontal="true"
             android:layout_below="@id/numberDisplay"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="30dp"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -53,7 +53,7 @@
             android:onClick="onTrue"
             android:layout_below="@id/questionDisplay"
             android:layout_marginLeft="60dp"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="30dp"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -70,7 +70,7 @@
             android:layout_below="@id/questionDisplay"
             android:layout_marginRight="60dp"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="30dp"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -84,9 +84,9 @@
             android:background="@android:color/holo_orange_light"
             android:drawableBottom="@drawable/ic_fast_forward_black_48dp"
             android:onClick="onNext"
-            android:layout_below="@id/trueButton"
+            android:layout_below="@id/hintButton"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="20dp"/>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fabButton"
@@ -115,7 +115,7 @@
             android:enabled="true"
             android:drawableBottom="@drawable/ic_help_outline_black_48dp"
             android:layout_below="@id/trueButton"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_marginLeft="60dp" />
 
         <Button
@@ -129,7 +129,7 @@
             android:enabled="true"
             android:drawableBottom="@drawable/ic_thumb_up_black_48dp"
             android:layout_below="@id/falseButton"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="20dp"
             android:layout_alignParentRight="true"
             android:layout_marginRight="60dp" />
     </RelativeLayout>
