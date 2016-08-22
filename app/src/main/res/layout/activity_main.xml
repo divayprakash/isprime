@@ -103,6 +103,20 @@
             android:layout_alignParentBottom="true"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hintButtonText"
+            android:id="@+id/hintButton"
+            android:background="@android:color/holo_blue_bright"
+            android:textSize="18sp"
+            android:clickable="true"
+            android:enabled="true"
+            android:drawableBottom="@drawable/ic_help_outline_black_48dp"
+            android:layout_below="@id/trueButton"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="60dp" />
     </RelativeLayout>
 
 </RelativeLayout>
