@@ -72,6 +72,36 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@string/hintButtonText"
+            android:id="@+id/hintButton"
+            android:background="@android:color/holo_blue_bright"
+            android:textSize="18sp"
+            android:clickable="true"
+            android:enabled="true"
+            android:drawableBottom="@drawable/ic_help_outline_black_48dp"
+            android:layout_below="@id/trueButton"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="60dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cheatButtonText"
+            android:id="@+id/cheatButton"
+            android:onClick="onCheat"
+            android:background="@android:color/holo_purple"
+            android:textSize="18sp"
+            android:clickable="true"
+            android:enabled="true"
+            android:drawableBottom="@drawable/ic_thumb_up_black_48dp"
+            android:layout_below="@id/falseButton"
+            android:layout_marginTop="20dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="60dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="@string/nextButtonText"
             android:id="@+id/nextbutton"
             android:textSize="18sp"
@@ -100,35 +130,6 @@
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"/>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/hintButtonText"
-            android:id="@+id/hintButton"
-            android:background="@android:color/holo_blue_bright"
-            android:textSize="18sp"
-            android:clickable="true"
-            android:enabled="true"
-            android:drawableBottom="@drawable/ic_help_outline_black_48dp"
-            android:layout_below="@id/trueButton"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="60dp" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/cheatButtonText"
-            android:id="@+id/cheatButton"
-            android:onClick="onCheat"
-            android:background="@android:color/holo_purple"
-            android:textSize="18sp"
-            android:clickable="true"
-            android:enabled="true"
-            android:drawableBottom="@drawable/ic_thumb_up_black_48dp"
-            android:layout_below="@id/falseButton"
-            android:layout_marginTop="20dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="60dp" />
     </RelativeLayout>
 
 </RelativeLayout>
