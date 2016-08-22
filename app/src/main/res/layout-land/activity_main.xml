@@ -127,7 +127,7 @@
             android:layout_below="@id/hintButtonLand"
             android:layout_marginLeft="150dp"
             android:layout_marginTop="30dp"/>
-        
+
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fabButtonLand"
             android:layout_width="wrap_content"
