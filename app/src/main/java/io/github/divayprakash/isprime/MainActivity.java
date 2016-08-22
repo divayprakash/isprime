@@ -137,7 +137,16 @@ public class MainActivity extends AppCompatActivity {
             vibratorInstance.vibrate(500);
         }
     }
-    
+
+    /**
+     * This is the onClick action handler for the "Cheat" button. It checks the
+     * IS_PRIME variable to determine if the displayed number is prime or not.
+     * Accordingly, it displayes a Toast giving the correct answer and sets the
+     * numberDisplay TextView color to the one corresponding to the correct
+     * answer.
+     * @param view The view instance passed to this method.
+     */
+    @SuppressWarnings("unused")
     public void onCheat(View view) {
         if (IS_PRIME) {
             Toast.makeText(this, "The correct answer is TRUE", Toast.LENGTH_SHORT).show();
@@ -148,8 +157,6 @@ public class MainActivity extends AppCompatActivity {
             numberDisplay.setTextColor(Color.parseColor("#FFD50000"));
         }
     }
-
-    @SuppressWarnings("unused")
 
     /**
      * This is the onClick action handler for the "Exit" FAB button. It calls
