@@ -117,6 +117,21 @@
             android:layout_below="@id/trueButton"
             android:layout_marginTop="40dp"
             android:layout_marginLeft="60dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cheatButtonText"
+            android:id="@+id/cheatButton"
+            android:background="@android:color/holo_purple"
+            android:textSize="18sp"
+            android:clickable="true"
+            android:enabled="true"
+            android:drawableBottom="@drawable/ic_thumb_up_black_48dp"
+            android:layout_below="@id/falseButton"
+            android:layout_marginTop="40dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="60dp" />
     </RelativeLayout>
 
 </RelativeLayout>

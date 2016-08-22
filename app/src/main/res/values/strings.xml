@@ -8,4 +8,5 @@
     <string name="falseButtonText">False</string>
     <string name="nextButtonText">Next</string>
     <string name="hintButtonText">Hint</string>
+    <string name="cheatButtonText">Cheat</string>
 </resources>
