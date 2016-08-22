@@ -64,7 +64,7 @@
             android:onClick="onTrue"
             android:layout_toEndOf="@id/questionDisplayLandOne"
             android:layout_marginLeft="60dp"
-            android:layout_marginTop="60dp"/>
+            android:layout_marginTop="40dp"/>
 
         <Button
             android:layout_width="120dp"
@@ -78,7 +78,7 @@
             android:drawableLeft="@drawable/ic_clear_black_48dp"
             android:onClick="onFalse"
             android:layout_toRightOf="@id/trueButtonLand"
-            android:layout_marginTop="60dp"
+            android:layout_marginTop="40dp"
             android:layout_marginLeft="50dp"/>
 
         <Button
@@ -93,9 +93,9 @@
             android:drawableLeft="@drawable/ic_fast_forward_black_48dp"
             android:onClick="onNext"
             android:layout_toRightOf="@id/questionDisplayLandOne"
-            android:layout_below="@id/falseButtonLand"
+            android:layout_below="@id/hintButtonLand"
             android:layout_marginLeft="150dp"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="30dp"/>
 
         <Button
             android:layout_width="120dp"
@@ -108,9 +108,9 @@
             android:enabled="true"
             android:drawableLeft="@drawable/ic_help_outline_black_48dp"
             android:layout_toRightOf="@id/questionDisplayLandOne"
-            android:layout_below="@id/falseButtonLand"
+            android:layout_below="@id/trueButtonLand"
             android:layout_marginLeft="60dp"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="30dp"/>
 
         <Button
             android:layout_width="120dp"
@@ -125,7 +125,7 @@
             android:layout_toRightOf="@id/hintButtonLand"
             android:layout_below="@id/falseButtonLand"
             android:layout_marginLeft="50dp"
-            android:layout_marginTop="40dp"/>
+            android:layout_marginTop="30dp"/>
 
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fabButtonLand"
