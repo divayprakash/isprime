@@ -97,6 +97,36 @@
             android:layout_marginLeft="150dp"
             android:layout_marginTop="40dp"/>
 
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/hintButtonText"
+            android:id="@+id/hintButtonLand"
+            android:textSize="18sp"
+            android:background="@android:color/holo_blue_bright"
+            android:clickable="true"
+            android:enabled="true"
+            android:drawableLeft="@drawable/ic_help_outline_black_48dp"
+            android:layout_toRightOf="@id/questionDisplayLandOne"
+            android:layout_below="@id/falseButtonLand"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="40dp"/>
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:text="@string/cheatButtonText"
+            android:id="@+id/cheatButtonLand"
+            android:textSize="18sp"
+            android:background="@android:color/holo_purple"
+            android:clickable="true"
+            android:enabled="true"
+            android:drawableLeft="@drawable/ic_thumb_up_black_48dp"
+            android:layout_toRightOf="@id/hintButtonLand"
+            android:layout_below="@id/falseButtonLand"
+            android:layout_marginLeft="50dp"
+            android:layout_marginTop="40dp"/>
+
         <android.support.design.widget.FloatingActionButton
             android:id="@+id/fabButtonLand"
             android:layout_width="wrap_content"
