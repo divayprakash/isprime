@@ -10,7 +10,6 @@ import android.view.MenuItem;
  * displayed when the user presses the "Hint" button.
  *
  * @author Divay Prakash
- * @version 1.0
  */
 public class HintActivity extends AppCompatActivity {
 

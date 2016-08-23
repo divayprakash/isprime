@@ -18,7 +18,6 @@ import java.util.concurrent.ThreadLocalRandom;
  * Not' Android application.
  *
  * @author Divay Prakash
- * @version 1.0
  */
 public class MainActivity extends AppCompatActivity {
 

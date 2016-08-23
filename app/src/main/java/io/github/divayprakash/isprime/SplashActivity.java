@@ -10,7 +10,6 @@ import android.os.Handler;
  * displayed at the beginning of the 'Prime or Not' application.
  *
  * @author Divay Prakash
- * @version 1.0
  */
 public class SplashActivity extends Activity {
 
