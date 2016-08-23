@@ -15,11 +15,6 @@ import android.widget.TextView;
 public class CheatActivity extends AppCompatActivity {
 
     /**
-     *
-     */
-    private TextView cheatDisplay;
-
-    /**
      * This method is called at the startup of the application. It sets the
      * view to the XML file associated with this Activity. The method also
      * enables the back button on the action bar.
@@ -32,7 +27,7 @@ public class CheatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cheat);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        cheatDisplay = (TextView)findViewById(R.id.cheatDisplay);
+        TextView cheatDisplay = (TextView)findViewById(R.id.cheatDisplay);
         cheatDisplay.setText(cheatText);
     }
 

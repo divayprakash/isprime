@@ -202,5 +202,5 @@ public class MainActivity extends AppCompatActivity {
         int MIN = 2;
         return ThreadLocalRandom.current().nextInt(MIN, MAX + 1);
     }
-    
+
 }
