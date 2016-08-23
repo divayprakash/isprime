@@ -158,7 +158,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This is the onClick action handler for the "Hint" button.
+     * This is the onClick action handler for the "Hint" button. It creates an
+     * instance of the Intent class and uses it to launch the HintActivity.
+     * @param view The view instance passed to this method.
      */
     @SuppressWarnings("unused")
     public void onHint(View view) {
