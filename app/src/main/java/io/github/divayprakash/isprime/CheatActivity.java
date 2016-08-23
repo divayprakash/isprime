@@ -22,7 +22,7 @@ public class CheatActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_hint);
+        setContentView(R.layout.activity_cheat);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
