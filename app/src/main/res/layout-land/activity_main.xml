@@ -94,7 +94,8 @@
             android:layout_toRightOf="@id/questionDisplayLandOne"
             android:layout_below="@id/trueButtonLand"
             android:layout_marginLeft="60dp"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="30dp"
+            android:onClick="onHint" />
 
         <Button
             android:layout_width="120dp"

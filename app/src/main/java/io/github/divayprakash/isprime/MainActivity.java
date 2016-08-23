@@ -1,6 +1,7 @@
 package io.github.divayprakash.isprime;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -154,6 +155,15 @@ public class MainActivity extends AppCompatActivity {
         else {
             Toast.makeText(this, "The correct answer is FALSE", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    /**
+     * This is the onClick action handler for the "Hint" button.
+     */
+    @SuppressWarnings("unused")
+    public void onHint(View view) {
+        Intent intent = new Intent(this, HintActivity.class);
+        startActivity(intent);
     }
 
     /**
