@@ -146,6 +146,14 @@ public class MainActivity extends AppCompatActivity {
     @SuppressWarnings("unused")
     public void onCheat(View view) {
         Intent intent = new Intent(this, CheatActivity.class);
+        String cheatText;
+        if (IS_PRIME) {
+            cheatText = "TRUE";
+        }
+        else {
+            cheatText = "FALSE";
+        }
+        intent.putExtra("CheatText", cheatText);
         startActivity(intent);
     }
 
