@@ -139,21 +139,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This is the onClick action handler for the "Cheat" button. It checks the
-     * IS_PRIME variable to determine if the displayed number is prime or not.
-     * Accordingly, it displayes a Toast giving the correct answer and sets the
-     * numberDisplay TextView color to the one corresponding to the correct
-     * answer.
+     * This is the onClick action handler for the "Cheat" button. It creates an
+     * instance of the Intent class and uses it to launch the CheatActivity.
      * @param view The view instance passed to this method.
      */
     @SuppressWarnings("unused")
     public void onCheat(View view) {
-        if (IS_PRIME) {
-            Toast.makeText(this, "The correct answer is TRUE", Toast.LENGTH_SHORT).show();
-        }
-        else {
-            Toast.makeText(this, "The correct answer is FALSE", Toast.LENGTH_SHORT).show();
-        }
+        Intent intent = new Intent(this, CheatActivity.class);
+        startActivity(intent);
     }
 
     /**
