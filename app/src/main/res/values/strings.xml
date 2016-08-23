@@ -15,4 +15,5 @@
                                 2 is a prime as its only divisors are 1 and itself.\n
                                 However, 4 is not a prime as it is divisible by 2.</string>
     <string name="hintTitleText">What is a prime number?</string>
+    <string name="cheatTitle">The correct\nanswer is</string>
 </resources>
