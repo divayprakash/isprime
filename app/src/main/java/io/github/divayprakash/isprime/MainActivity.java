@@ -63,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         numberDisplay = (TextView)findViewById(R.id.numberDisplay);
         hintButton = (Button)findViewById(R.id.hintButton);
+        cheatButton = (Button)findViewById(R.id.cheatButton);
         if (savedInstanceState == null) {
             RANDOM_NUMBER = returnRandom();
             IS_PRIME = isPrime();
@@ -70,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
             numberDisplay.setTextColor(Color.parseColor("#FF000000"));
             hintButton.setEnabled(true);
             hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
+            cheatButton.setEnabled(true);
+            cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
         }
         else {
             RANDOM_NUMBER = savedInstanceState.getInt("RandomNumber");
@@ -83,6 +86,15 @@ public class MainActivity extends AppCompatActivity {
             else {
                 hintButton.setEnabled(true);
                 hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
+            }
+            IS_CHEAT_TAKEN = savedInstanceState.getBoolean("IsCheatTaken");
+            if (IS_CHEAT_TAKEN) {
+                cheatButton.setEnabled(false);
+                cheatButton.setBackgroundColor(Color.parseColor("#FF616161"));
+            }
+            else {
+                cheatButton.setEnabled(true);
+                cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
             }
         }
         vibratorInstance = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -98,6 +110,7 @@ public class MainActivity extends AppCompatActivity {
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putInt("RandomNumber", RANDOM_NUMBER);
         savedInstanceState.putBoolean("IsHintTaken", IS_HINT_TAKEN);
+        savedInstanceState.putBoolean("IsCheatTaken", IS_CHEAT_TAKEN);
         super.onSaveInstanceState(savedInstanceState);
     }
 
@@ -117,6 +130,9 @@ public class MainActivity extends AppCompatActivity {
         IS_HINT_TAKEN = false;
         hintButton.setEnabled(true);
         hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
+        IS_CHEAT_TAKEN = false;
+        cheatButton.setEnabled(true);
+        cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
     }
 
     /**
