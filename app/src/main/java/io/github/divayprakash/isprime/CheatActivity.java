@@ -49,10 +49,10 @@ public class CheatActivity extends AppCompatActivity {
         cheatTitle.setVisibility(View.VISIBLE);
         boolean IS_PRIME = isPrime();
         if (IS_PRIME) {
-            cheatDisplay.setText("TRUE");
+            cheatDisplay.setText(R.string.trueString);
         }
         else {
-            cheatDisplay.setText("FALSE");
+            cheatDisplay.setText(R.string.falseString);
         }
         cheatDisplay.setVisibility(View.VISIBLE);
     }

@@ -17,4 +17,6 @@
     <string name="hintTitleText">What is a prime number?</string>
     <string name="cheatTitle">The correct\nanswer is</string>
     <string name="showCheat">Show cheat</string>
+    <string name="trueString">TRUE</string>
+    <string name="falseString">FALSE</string>
 </resources>
