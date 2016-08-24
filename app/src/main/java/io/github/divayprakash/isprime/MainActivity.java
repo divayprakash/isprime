@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.os.Vibrator;
@@ -42,6 +43,8 @@ public class MainActivity extends AppCompatActivity {
     private Vibrator vibratorInstance;
 
     private static final int HINT_REQUEST = 1;
+    private int IS_HINT_TAKEN;
+    private Button hintButton;
 
     /**
      * This method is called at the startup of the application. It initializes
@@ -55,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         numberDisplay = (TextView)findViewById(R.id.numberDisplay);
+        hintButton = (Button)findViewById(R.id.hintButton);
         if (savedInstanceState == null) {
             RANDOM_NUMBER = returnRandom();
             IS_PRIME = isPrime();
@@ -94,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         IS_PRIME = isPrime();
         numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
         numberDisplay.setTextColor(Color.parseColor("#FF000000"));
+        hintButton.setEnabled(true);
     }
 
     /**
@@ -177,6 +182,9 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 if (data != null) {
                     Toast.makeText(this, "Hint Taken!", Toast.LENGTH_SHORT).show();
+                    IS_HINT_TAKEN = 1;
+                    hintButton.setEnabled(false);
+                    hintButton.setBackgroundColor();
                 }
             }
         }
