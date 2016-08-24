@@ -67,34 +67,26 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState == null) {
             RANDOM_NUMBER = returnRandom();
             IS_PRIME = isPrime();
-            numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
-            numberDisplay.setTextColor(Color.parseColor("#FF000000"));
-            hintButton.setEnabled(true);
-            hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
-            cheatButton.setEnabled(true);
-            cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
+            setNumberDisplay();
+            enableHintButton();
+            enableCheatButton();
         }
         else {
             RANDOM_NUMBER = savedInstanceState.getInt("RandomNumber");
-            numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
-            numberDisplay.setTextColor(Color.parseColor("#FF000000"));
+            setNumberDisplay();
             IS_HINT_TAKEN = savedInstanceState.getBoolean("IsHintTaken");
             if (IS_HINT_TAKEN) {
-                hintButton.setEnabled(false);
-                hintButton.setBackgroundColor(Color.parseColor("#FF616161"));
+                disableHintButton();
             }
             else {
-                hintButton.setEnabled(true);
-                hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
+                enableHintButton();
             }
             IS_CHEAT_TAKEN = savedInstanceState.getBoolean("IsCheatTaken");
             if (IS_CHEAT_TAKEN) {
-                cheatButton.setEnabled(false);
-                cheatButton.setBackgroundColor(Color.parseColor("#FF616161"));
+                disableCheatButton();
             }
             else {
-                cheatButton.setEnabled(true);
-                cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
+                enableCheatButton();
             }
         }
         vibratorInstance = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
@@ -125,14 +117,11 @@ public class MainActivity extends AppCompatActivity {
     public void onNext(View view) {
         RANDOM_NUMBER = returnRandom();
         IS_PRIME = isPrime();
-        numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
-        numberDisplay.setTextColor(Color.parseColor("#FF000000"));
+        setNumberDisplay();
         IS_HINT_TAKEN = false;
-        hintButton.setEnabled(true);
-        hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
+        enableHintButton();
         IS_CHEAT_TAKEN = false;
-        cheatButton.setEnabled(true);
-        cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
+        enableCheatButton();
     }
 
     /**
@@ -147,12 +136,12 @@ public class MainActivity extends AppCompatActivity {
     @SuppressWarnings("unused")
     public void onTrue(View view) {
         if (IS_PRIME) {
-            Toast.makeText(this, "Your answer is correct!", Toast.LENGTH_SHORT).show();
-            numberDisplay.setTextColor(Color.parseColor("#FF99CC00"));
+            makeToast(this, "Your answer is correct!");
+            setNumberDisplayGreen();
         }
         else {
-            Toast.makeText(this, "Your answer is incorrect!", Toast.LENGTH_SHORT).show();
-            numberDisplay.setTextColor(Color.parseColor("#FFD50000"));
+            makeToast(this, "Your answer is incorrect!");
+            setNumberDisplayRed();
             vibratorInstance.vibrate(500);
         }
     }
@@ -169,12 +158,12 @@ public class MainActivity extends AppCompatActivity {
     @SuppressWarnings("unused")
     public void onFalse(View view) {
         if (!IS_PRIME) {
-            Toast.makeText(this, "Your answer is correct!", Toast.LENGTH_SHORT).show();
-            numberDisplay.setTextColor(Color.parseColor("#FF99CC00"));
+            makeToast(this, "Your answer is correct!");
+            setNumberDisplayGreen();
         }
         else {
-            Toast.makeText(this, "Your answer is incorrect!", Toast.LENGTH_SHORT).show();
-            numberDisplay.setTextColor(Color.parseColor("#FFD50000"));
+            makeToast(this, "Your answer is incorrect!");
+            setNumberDisplayRed();
             vibratorInstance.vibrate(500);
         }
     }
@@ -208,31 +197,65 @@ public class MainActivity extends AppCompatActivity {
         if (requestCode == HINT_REQUEST) {
             if (resultCode == RESULT_OK) {
                 if (data != null) {
-                    Toast.makeText(this, "Hint Taken!", Toast.LENGTH_SHORT).show();
+                    makeToast(this, "Hint Taken!");
                     IS_HINT_TAKEN = true;
-                    hintButton.setEnabled(false);
-                    hintButton.setBackgroundColor(Color.parseColor("#FF616161"));
+                    disableHintButton();
                 }
             }
         }
         else if (requestCode == CHEAT_REQUEST){
             if (resultCode == RESULT_OK) {
                 if (data != null) {
-                    Toast.makeText(this, "Cheat taken!", Toast.LENGTH_SHORT).show();
+                    makeToast(this, "Cheat taken!");
                     IS_CHEAT_TAKEN = true;
-                    cheatButton.setEnabled(false);
-                    cheatButton.setBackgroundColor(Color.parseColor("#FF616161"));
+                    disableCheatButton();
                 }
             }
             else if (resultCode == RESULT_CANCELED) {
                 if (data != null) {
-                    Toast.makeText(this, "Cheat not taken!", Toast.LENGTH_SHORT).show();
+                    makeToast(this, "Cheat not taken!");
                     IS_CHEAT_TAKEN = false;
-                    cheatButton.setEnabled(true);
-                    cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
+                    enableCheatButton();
                 }
             }
         }
+    }
+
+    private void enableCheatButton() {
+        cheatButton.setEnabled(true);
+        cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
+    }
+
+    private void disableCheatButton() {
+        cheatButton.setEnabled(false);
+        cheatButton.setBackgroundColor(Color.parseColor("#FF616161"));
+    }
+
+    private void enableHintButton() {
+        hintButton.setEnabled(true);
+        hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
+    }
+
+    private void disableHintButton() {
+        hintButton.setEnabled(false);
+        hintButton.setBackgroundColor(Color.parseColor("#FF616161"));
+    }
+
+    private void setNumberDisplay() {
+        numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
+        numberDisplay.setTextColor(Color.parseColor("#FF000000"));
+    }
+
+    private void setNumberDisplayGreen() {
+        numberDisplay.setTextColor(Color.parseColor("#FF99CC00"));
+    }
+
+    private void setNumberDisplayRed() {
+        numberDisplay.setTextColor(Color.parseColor("#FFD50000"));
+    }
+
+    private void makeToast(Context context, String toastMsg) {
+        Toast.makeText(context, toastMsg, Toast.LENGTH_SHORT).show();
     }
 
     /**
