@@ -6,6 +6,7 @@ import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.os.Vibrator;
@@ -41,6 +42,10 @@ public class MainActivity extends AppCompatActivity {
      */
     private Vibrator vibratorInstance;
 
+    private static final int HINT_REQUEST = 1;
+    private Button hintButton;
+    private boolean IS_HINT_DISABLED;
+
     /**
      * This method is called at the startup of the application. It initializes
      * the random number using parameter savedInstanceState and also assigns
@@ -53,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         numberDisplay = (TextView)findViewById(R.id.numberDisplay);
+        hintButton = (Button)findViewById(R.id.hintButton);
         if (savedInstanceState == null) {
             RANDOM_NUMBER = returnRandom();
             IS_PRIME = isPrime();
@@ -61,8 +67,15 @@ public class MainActivity extends AppCompatActivity {
         }
         else {
             RANDOM_NUMBER = savedInstanceState.getInt("RandomNumber");
+            IS_HINT_DISABLED = savedInstanceState.getBoolean("IsHintDisabled");
             numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
             numberDisplay.setTextColor(Color.parseColor("#FF000000"));
+            if (IS_HINT_DISABLED) {
+                hintButton.setEnabled(false);
+            }
+            else {
+                hintButton.setEnabled(true);
+            }
         }
         vibratorInstance = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
     }
@@ -76,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putInt("RandomNumber", RANDOM_NUMBER);
+        savedInstanceState.putBoolean("IsHintDisabled", IS_HINT_DISABLED);
         super.onSaveInstanceState(savedInstanceState);
     }
 
@@ -165,7 +179,17 @@ public class MainActivity extends AppCompatActivity {
     @SuppressWarnings("unused")
     public void onHint(View view) {
         Intent intent = new Intent(this, HintActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, HINT_REQUEST);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == HINT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                IS_HINT_DISABLED = true;
+                hintButton.setEnabled(false);
+            }
+        }
     }
 
     /**
