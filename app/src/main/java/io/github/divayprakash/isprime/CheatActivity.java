@@ -32,14 +32,17 @@ public class CheatActivity extends AppCompatActivity {
 
     /**
      * This method is called when the back button on the action bar is pressed.
-     * It creates an Intent instance to return to the MainActivity.
+     * It calls finish() to end this activity and return to the MainActivity.
      * @param item The menu item instance passed to this method.
      * @return true
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        Intent myIntent = new Intent(this, MainActivity.class);
-        startActivity(myIntent);
-        return true;
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
