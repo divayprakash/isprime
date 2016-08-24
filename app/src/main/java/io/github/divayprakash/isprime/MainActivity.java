@@ -228,8 +228,8 @@ public class MainActivity extends AppCompatActivity {
                 if (data != null) {
                     Toast.makeText(this, "Cheat not taken!", Toast.LENGTH_SHORT).show();
                     IS_CHEAT_TAKEN = false;
-                    hintButton.setEnabled(true);
-                    hintButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
+                    cheatButton.setEnabled(true);
+                    cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
                 }
             }
         }
