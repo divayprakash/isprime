@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 /**
@@ -14,6 +15,11 @@ import android.widget.TextView;
  */
 public class CheatActivity extends AppCompatActivity {
 
+    private TextView cheatTitle;
+    private TextView cheatDisplay;
+    private int RANDOM_NUMBER;
+    private boolean IS_CHEAT_TAKEN = false;
+
     /**
      * This method is called at the startup of the application. It sets the
      * view to the XML file associated with this Activity. The method also
@@ -22,12 +28,39 @@ public class CheatActivity extends AppCompatActivity {
      */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Intent intent = getIntent();
-        String cheatText = intent.getStringExtra("CheatText");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cheat);
+        Intent intent = getIntent();
+        RANDOM_NUMBER = intent.getIntExtra("RandomNumber", 2);
+        TextView cheatTitle = (TextView)findViewById(R.id.cheatTitle);
         TextView cheatDisplay = (TextView)findViewById(R.id.cheatDisplay);
-        cheatDisplay.setText(cheatText);
+    }
+
+    private void setIntentValues(){
+        Intent intent = getIntent();
+        intent.putExtra("IsCheatTaken", IS_CHEAT_TAKEN);
+        setResult(RESULT_OK, intent);
+        finish();
+    }
+
+    public void onShowCheat(View view) {
+        IS_CHEAT_TAKEN = true;
+        cheatTitle.setVisibility(View.VISIBLE);
+        boolean IS_PRIME = isPrime();
+        if (IS_PRIME) {
+            cheatDisplay.setText("TRUE");
+        }
+        else {
+            cheatDisplay.setText("FALSE");
+        }
+        cheatDisplay.setVisibility(View.VISIBLE);
+    }
+
+    private boolean isPrime() {
+        for (int Divisor = 2; Divisor < RANDOM_NUMBER / 2; Divisor++) {
+            if (RANDOM_NUMBER % Divisor == 0) return false;
+        }
+        return true;
     }
 
     /**
@@ -38,11 +71,15 @@ public class CheatActivity extends AppCompatActivity {
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
+        if (item.getItemId() == android.R.id.home) {
+            setIntentValues();
+            return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        setIntentValues();
     }
 }

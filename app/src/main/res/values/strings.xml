@@ -16,4 +16,5 @@
                                 However, 4 is not a prime as it is divisible by 2.</string>
     <string name="hintTitleText">What is a prime number?</string>
     <string name="cheatTitle">The correct\nanswer is</string>
+    <string name="showCheat">Show cheat</string>
 </resources>
