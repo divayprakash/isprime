@@ -4,16 +4,6 @@
 
 Simple Android app to ask IsPrime questions, created as an introduction to Android app development during Mobile Computing course at [IIIT Delhi](http://iiitd.ac.in/). The project was created using [Android Studio](https://developer.android.com/studio/index.html)
 
-## Screenshots
-
-<img src="https://github.com/divayprakash/isprime/blob/master/screenshots/splashFramed.png" width="200" length="360">
-<img src="https://github.com/divayprakash/isprime/blob/master/screenshots/portraitCorrectFramed.png" width="200" length="360">
-<img src="https://github.com/divayprakash/isprime/blob/master/screenshots/portraitQuestionFramed.png" width="200" length="360">
-<img src="https://github.com/divayprakash/isprime/blob/master/screenshots/portraitIncorrectFramed.png" width="200" length="360">
-<img src="https://github.com/divayprakash/isprime/blob/master/screenshots/landscapeCorrectFramed.png" width="360" length="200">
-<img src="https://github.com/divayprakash/isprime/blob/master/screenshots/landscapeQuestionFramed.png" width="360" length="200">
-<img src="https://github.com/divayprakash/isprime/blob/master/screenshots/landscapeIncorrectFramed.png" width="360" length="200">
-
 ## Javadocs
 
 The Javadocs for this project can be found [here](https://divayprakash.github.io/isprime-javadocs/)
