@@ -55,7 +55,7 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="@string/trueButtonText"
-            android:id="@+id/trueButtonLand"
+            android:id="@+id/trueButton"
             android:clickable="true"
             android:textSize="18sp"
             android:enabled="true"
@@ -70,14 +70,14 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="@string/falseButtonText"
-            android:id="@+id/falseButtonLand"
+            android:id="@+id/falseButton"
             android:clickable="true"
             android:textSize="18sp"
             android:enabled="true"
             android:background="@color/design_textinput_error_color_light"
             android:drawableLeft="@drawable/ic_clear_black_48dp"
             android:onClick="onFalse"
-            android:layout_toRightOf="@id/trueButtonLand"
+            android:layout_toRightOf="@id/trueButton"
             android:layout_marginTop="40dp"
             android:layout_marginLeft="50dp"/>
 
@@ -85,14 +85,14 @@
             android:layout_width="120dp"
             android:layout_height="wrap_content"
             android:text="@string/hintButtonText"
-            android:id="@+id/hintButtonLand"
+            android:id="@+id/hintButton"
             android:textSize="18sp"
             android:background="@android:color/holo_blue_bright"
             android:clickable="true"
             android:enabled="true"
             android:drawableLeft="@drawable/ic_help_outline_black_48dp"
             android:layout_toRightOf="@id/questionDisplayLandOne"
-            android:layout_below="@id/trueButtonLand"
+            android:layout_below="@id/trueButton"
             android:layout_marginLeft="60dp"
             android:layout_marginTop="30dp"
             android:onClick="onHint" />
@@ -108,8 +108,8 @@
             android:enabled="true"
             android:onClick="onCheat"
             android:drawableLeft="@drawable/ic_thumb_up_black_48dp"
-            android:layout_toRightOf="@id/hintButtonLand"
-            android:layout_below="@id/falseButtonLand"
+            android:layout_toRightOf="@id/hintButton"
+            android:layout_below="@id/falseButton"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="30dp"/>
 
@@ -125,7 +125,7 @@
             android:drawableLeft="@drawable/ic_fast_forward_black_48dp"
             android:onClick="onNext"
             android:layout_toRightOf="@id/questionDisplayLandOne"
-            android:layout_below="@id/hintButtonLand"
+            android:layout_below="@id/hintButton"
             android:layout_marginLeft="150dp"
             android:layout_marginTop="30dp"/>
         
