@@ -23,7 +23,6 @@ public class HintActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hint);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     /**

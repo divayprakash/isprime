@@ -26,7 +26,6 @@ public class CheatActivity extends AppCompatActivity {
         String cheatText = intent.getStringExtra("CheatText");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cheat);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         TextView cheatDisplay = (TextView)findViewById(R.id.cheatDisplay);
         cheatDisplay.setText(cheatText);
     }
