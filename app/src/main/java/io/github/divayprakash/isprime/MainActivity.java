@@ -168,6 +168,7 @@ public class MainActivity extends AppCompatActivity {
     @SuppressWarnings("unused")
     public void onCheat(View view) {
         Intent intent = new Intent(this, CheatActivity.class);
+        intent.putExtra("RandomNumber", RANDOM_NUMBER);
         startActivityForResult(intent, CHEAT_REQUEST);
     }
 
