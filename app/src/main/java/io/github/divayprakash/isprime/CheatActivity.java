@@ -32,8 +32,8 @@ public class CheatActivity extends AppCompatActivity {
         setContentView(R.layout.activity_cheat);
         Intent intent = getIntent();
         RANDOM_NUMBER = intent.getIntExtra("RandomNumber", 2);
-        TextView cheatTitle = (TextView)findViewById(R.id.cheatTitle);
-        TextView cheatDisplay = (TextView)findViewById(R.id.cheatDisplay);
+        cheatTitle = (TextView)findViewById(R.id.cheatTitle);
+        cheatDisplay = (TextView)findViewById(R.id.cheatDisplay);
     }
 
     private void setIntentValues(){
