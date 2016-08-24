@@ -25,6 +25,12 @@ public class HintActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hint);
     }
 
+    private void setIntentValues(){
+        Intent intent = getIntent();
+        setResult(RESULT_OK, intent);
+        finish();
+    }
+
     /**
      * This method is called when the back button on the action bar is pressed.
      * It calls finish() to end this activity and return to the MainActivity.
@@ -33,11 +39,15 @@ public class HintActivity extends AppCompatActivity {
      */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                return true;
+        if (item.getItemId() == android.R.id.home) {
+            setIntentValues();
+            return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        setIntentValues();
     }
 }

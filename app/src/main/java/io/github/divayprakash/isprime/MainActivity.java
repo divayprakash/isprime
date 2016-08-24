@@ -41,6 +41,8 @@ public class MainActivity extends AppCompatActivity {
      */
     private Vibrator vibratorInstance;
 
+    private static final int HINT_REQUEST = 1;
+
     /**
      * This method is called at the startup of the application. It initializes
      * the random number using parameter savedInstanceState and also assigns
@@ -165,7 +167,19 @@ public class MainActivity extends AppCompatActivity {
     @SuppressWarnings("unused")
     public void onHint(View view) {
         Intent intent = new Intent(this, HintActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, HINT_REQUEST);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == HINT_REQUEST) {
+            if (resultCode == RESULT_OK) {
+                if (data != null) {
+                    Toast.makeText(this, "Hint Taken!", Toast.LENGTH_SHORT).show();
+                }
+            }
+        }
     }
 
     /**
