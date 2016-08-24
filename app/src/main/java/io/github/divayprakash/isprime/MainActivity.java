@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
     private Button hintButton;
 
     private static final int CHEAT_REQUEST = 2;
+    private boolean IS_CHEAT_TAKEN;
+    private Button cheatButton;
+
     /**
      * This method is called at the startup of the application. It initializes
      * the random number using parameter savedInstanceState and also assigns
@@ -193,6 +196,24 @@ public class MainActivity extends AppCompatActivity {
                     IS_HINT_TAKEN = true;
                     hintButton.setEnabled(false);
                     hintButton.setBackgroundColor(Color.parseColor("#FF616161"));
+                }
+            }
+        }
+        else if (requestCode == CHEAT_REQUEST){
+            if (resultCode == RESULT_OK) {
+                if (data != null) {
+                    Toast.makeText(this, "Cheat taken!", Toast.LENGTH_SHORT).show();
+                    IS_CHEAT_TAKEN = true;
+                    cheatButton.setEnabled(false);
+                    cheatButton.setBackgroundColor(Color.parseColor("#FF616161"));
+                }
+            }
+            else if (resultCode == RESULT_CANCELED) {
+                if (data != null) {
+                    Toast.makeText(this, "Cheat not taken!", Toast.LENGTH_SHORT).show();
+                    IS_CHEAT_TAKEN = false;
+                    hintButton.setEnabled(true);
+                    hintButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
                 }
             }
         }
