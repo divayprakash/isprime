@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private Vibrator vibratorInstance;
 
     private static final int HINT_REQUEST = 1;
-    private int IS_HINT_TAKEN;
+    private boolean IS_HINT_TAKEN;
     private Button hintButton;
 
     /**
@@ -59,8 +59,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         numberDisplay = (TextView)findViewById(R.id.numberDisplay);
         hintButton = (Button)findViewById(R.id.hintButton);
-        hintButton.setEnabled(true);
-        hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
+        if (IS_HINT_TAKEN) {
+            hintButton.setEnabled(true);
+            hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
+        }
+        else {
+            hintButton.setEnabled(false);
+            hintButton.setBackgroundColor(Color.parseColor("#FF616161"));
+        }
         if (savedInstanceState == null) {
             RANDOM_NUMBER = returnRandom();
             IS_PRIME = isPrime();
@@ -100,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
         IS_PRIME = isPrime();
         numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
         numberDisplay.setTextColor(Color.parseColor("#FF000000"));
+        IS_HINT_TAKEN = false;
         hintButton.setEnabled(true);
         hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
     }
@@ -185,7 +192,7 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 if (data != null) {
                     Toast.makeText(this, "Hint Taken!", Toast.LENGTH_SHORT).show();
-                    IS_HINT_TAKEN = 1;
+                    IS_HINT_TAKEN = true;
                     hintButton.setEnabled(false);
                     hintButton.setBackgroundColor(Color.parseColor("#FF616161"));
                 }
