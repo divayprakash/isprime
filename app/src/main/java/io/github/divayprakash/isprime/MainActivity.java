@@ -59,24 +59,27 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         numberDisplay = (TextView)findViewById(R.id.numberDisplay);
         hintButton = (Button)findViewById(R.id.hintButton);
-        if (IS_HINT_TAKEN) {
-            hintButton.setEnabled(true);
-            hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
-        }
-        else {
-            hintButton.setEnabled(false);
-            hintButton.setBackgroundColor(Color.parseColor("#FF616161"));
-        }
         if (savedInstanceState == null) {
             RANDOM_NUMBER = returnRandom();
             IS_PRIME = isPrime();
             numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
             numberDisplay.setTextColor(Color.parseColor("#FF000000"));
+            hintButton.setEnabled(true);
+            hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
         }
         else {
             RANDOM_NUMBER = savedInstanceState.getInt("RandomNumber");
             numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
             numberDisplay.setTextColor(Color.parseColor("#FF000000"));
+            IS_HINT_TAKEN = savedInstanceState.getBoolean("IsHintTaken");
+            if (IS_HINT_TAKEN) {
+                hintButton.setEnabled(false);
+                hintButton.setBackgroundColor(Color.parseColor("#FF616161"));
+            }
+            else {
+                hintButton.setEnabled(true);
+                hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
+            }
         }
         vibratorInstance = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
     }
@@ -90,6 +93,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putInt("RandomNumber", RANDOM_NUMBER);
+        savedInstanceState.putBoolean("IsHintTaken", IS_HINT_TAKEN);
         super.onSaveInstanceState(savedInstanceState);
     }
 
