@@ -74,7 +74,7 @@
             android:layout_height="wrap_content"
             android:text="@string/hintButtonText"
             android:id="@+id/hintButton"
-            android:background="@android:color/holo_blue_bright"
+            android:background="@color/switch_thumb_disabled_material_dark"
             android:textSize="18sp"
             android:clickable="true"
             android:enabled="true"

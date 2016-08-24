@@ -59,6 +59,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         numberDisplay = (TextView)findViewById(R.id.numberDisplay);
         hintButton = (Button)findViewById(R.id.hintButton);
+        hintButton.setEnabled(true);
+        hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
         if (savedInstanceState == null) {
             RANDOM_NUMBER = returnRandom();
             IS_PRIME = isPrime();
@@ -99,6 +101,7 @@ public class MainActivity extends AppCompatActivity {
         numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
         numberDisplay.setTextColor(Color.parseColor("#FF000000"));
         hintButton.setEnabled(true);
+        hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
     }
 
     /**
@@ -184,7 +187,7 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, "Hint Taken!", Toast.LENGTH_SHORT).show();
                     IS_HINT_TAKEN = 1;
                     hintButton.setEnabled(false);
-                    hintButton.setBackgroundColor();
+                    hintButton.setBackgroundColor(Color.parseColor("#FF616161"));
                 }
             }
         }
