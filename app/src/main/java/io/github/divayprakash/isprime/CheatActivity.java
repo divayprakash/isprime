@@ -18,7 +18,7 @@ public class CheatActivity extends AppCompatActivity {
     private TextView cheatTitle;
     private TextView cheatDisplay;
     private int RANDOM_NUMBER;
-    private boolean IS_CHEAT_TAKEN = false;
+    private boolean IS_CHEAT_TAKEN;
 
     /**
      * This method is called at the startup of the application. It sets the
@@ -34,6 +34,33 @@ public class CheatActivity extends AppCompatActivity {
         RANDOM_NUMBER = intent.getIntExtra("RandomNumber", 2);
         cheatTitle = (TextView)findViewById(R.id.cheatTitle);
         cheatDisplay = (TextView)findViewById(R.id.cheatDisplay);
+        if (savedInstanceState == null) {
+            IS_CHEAT_TAKEN = false;
+        }
+        else {
+            IS_CHEAT_TAKEN = savedInstanceState.getBoolean("IsCheatTaken");
+            if (IS_CHEAT_TAKEN) {
+                showCheat();
+            }
+        }
+    }
+
+    public void showCheat() {
+        cheatTitle.setVisibility(View.VISIBLE);
+        boolean IS_PRIME = isPrime();
+        if (IS_PRIME) {
+            cheatDisplay.setText("TRUE");
+        }
+        else {
+            cheatDisplay.setText("FALSE");
+        }
+        cheatDisplay.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putBoolean("IsCheatTaken", IS_CHEAT_TAKEN);
+        super.onSaveInstanceState(savedInstanceState);
     }
 
     private void setIntentValues(){
@@ -49,15 +76,7 @@ public class CheatActivity extends AppCompatActivity {
 
     public void onShowCheat(View view) {
         IS_CHEAT_TAKEN = true;
-        cheatTitle.setVisibility(View.VISIBLE);
-        boolean IS_PRIME = isPrime();
-        if (IS_PRIME) {
-            cheatDisplay.setText("TRUE");
-        }
-        else {
-            cheatDisplay.setText("FALSE");
-        }
-        cheatDisplay.setVisibility(View.VISIBLE);
+        showCheat();
     }
 
     private boolean isPrime() {
