@@ -38,8 +38,12 @@ public class CheatActivity extends AppCompatActivity {
 
     private void setIntentValues(){
         Intent intent = getIntent();
-        intent.putExtra("IsCheatTaken", IS_CHEAT_TAKEN);
-        setResult(RESULT_OK, intent);
+        if (IS_CHEAT_TAKEN) {
+            setResult(RESULT_OK, intent);
+        }
+        else {
+            setResult(RESULT_CANCELED, intent);
+        }
         finish();
     }
 
