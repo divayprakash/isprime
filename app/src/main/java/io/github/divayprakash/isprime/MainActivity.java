@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean IS_HINT_TAKEN;
     private Button hintButton;
 
+    private static final int CHEAT_REQUEST = 2;
     /**
      * This method is called at the startup of the application. It initializes
      * the random number using parameter savedInstanceState and also assigns
@@ -167,15 +168,7 @@ public class MainActivity extends AppCompatActivity {
     @SuppressWarnings("unused")
     public void onCheat(View view) {
         Intent intent = new Intent(this, CheatActivity.class);
-        String cheatText;
-        if (IS_PRIME) {
-            cheatText = "TRUE";
-        }
-        else {
-            cheatText = "FALSE";
-        }
-        intent.putExtra("CheatText", cheatText);
-        startActivity(intent);
+        startActivityForResult(intent, CHEAT_REQUEST);
     }
 
     /**
