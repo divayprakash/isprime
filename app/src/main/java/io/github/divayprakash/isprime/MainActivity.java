@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private Vibrator vibratorInstance;
     /**
      * int variable representing the request code for the call to HintActivity
-     * by MainActivity on pressing the "Hint" button
+     * by MainActivity on pressing the "Hint" button.
      */
     private static final int HINT_REQUEST = 1;
     /**
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     private Button hintButton;
     /**
      * int variable representing the request code for the call to CheatActivity
-     * by MainActivity on pressing the "Cheat" button
+     * by MainActivity on pressing the "Cheat" button.
      */
     private static final int CHEAT_REQUEST = 2;
     /**
