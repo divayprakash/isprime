@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.TextView;
 
 /**
- * The HintActivity class implements the control logic for the hint screen
+ * The CheatActivity class implements the control logic for the hint screen
  * displayed when the user presses the "Cheat" button.
  *
  * @author Divay Prakash
