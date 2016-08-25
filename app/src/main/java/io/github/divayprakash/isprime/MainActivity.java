@@ -41,20 +41,38 @@ public class MainActivity extends AppCompatActivity {
      * Vibrator instance variable to enable vibration of device when needed.
      */
     private Vibrator vibratorInstance;
-
+    /**
+     * int variable representing the request code for the call to HintActivity
+     * by MainActivity on pressing the "Hint" button
+     */
     private static final int HINT_REQUEST = 1;
+    /**
+     * Boolean variable representing if the hint has been taken or not.
+     */
     private boolean IS_HINT_TAKEN;
+    /**
+     * Button variable representing the hintButton.
+     */
     private Button hintButton;
-
+    /**
+     * int variable representing the request code for the call to CheatActivity
+     * by MainActivity on pressing the "Cheat" button
+     */
     private static final int CHEAT_REQUEST = 2;
+    /**
+     * Boolean variable representing if the cheat has been taken or not.
+     */
     private boolean IS_CHEAT_TAKEN;
+    /**
+     * Button variable representing the cheatButton.
+     */
     private Button cheatButton;
 
     /**
      * This method is called at the startup of the application. It initializes
-     * the random number using parameter savedInstanceState and also assigns
-     * the Android VIBRATOR_SERVICE to the Vibrator instance variable using
-     * getSystemService().
+     * the random number, hint status and cheat status using parameter
+     * savedInstanceState and also assigns the Android VIBRATOR_SERVICE to the
+     * Vibrator instance variable using getSystemService().
      * @param savedInstanceState The saved instance state of the application.
      */
     @Override
@@ -111,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
      * returnRandom() method to assign a new random value to the RANDOM_NUMBER
      * variable. Thereafter, it calls the isPrime() method to determine if
      * RANDOM_NUMBER is prime or not. It then sets the numberDisplay TextView.
+     * Also, it restores the hint and cheat buttons to their default state.
      * @param view The View instance passed to this method.
      */
     @SuppressWarnings("unused")
@@ -171,6 +190,8 @@ public class MainActivity extends AppCompatActivity {
     /**
      * This is the onClick action handler for the "Cheat" button. It creates an
      * instance of the Intent class and uses it to launch the CheatActivity.
+     * Also, it passes the RANDOM_NUMBER to the CheatActivity using the
+     * putExtra() method of the Intent instance.
      * @param view The view instance passed to this method.
      */
     @SuppressWarnings("unused")
@@ -191,6 +212,15 @@ public class MainActivity extends AppCompatActivity {
         startActivityForResult(intent, HINT_REQUEST);
     }
 
+    /**
+     * This is the return handler triggered on returning from any activity.
+     * It uses the requestCode parameter to differentiate between the activities
+     * returning. Thereafter, it checks the resultCode to determine if the hint/
+     * cheat was taken or not and accordingly sets the hint/cheat status.
+     * @param requestCode The request code passed to this method.
+     * @param resultCode The result code passed to this method.
+     * @param data The Intent instance passed to this method.
+     */
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -221,39 +251,65 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method enables the cheat button.
+     */
     private void enableCheatButton() {
         cheatButton.setEnabled(true);
         cheatButton.setBackgroundColor(Color.parseColor("#FFAA66CC"));
     }
 
+    /**
+     * This method disables the cheat button.
+     */
     private void disableCheatButton() {
         cheatButton.setEnabled(false);
         cheatButton.setBackgroundColor(Color.parseColor("#FF616161"));
     }
 
+    /**
+     * This method enables the hint button.
+     */
     private void enableHintButton() {
         hintButton.setEnabled(true);
         hintButton.setBackgroundColor(Color.parseColor("#FF00DDFF"));
     }
 
+    /**
+     * This method disables the hint button.
+     */
     private void disableHintButton() {
         hintButton.setEnabled(false);
         hintButton.setBackgroundColor(Color.parseColor("#FF616161"));
     }
 
+    /**
+     * This method sets the numberDisplay TextView.
+     */
     private void setNumberDisplay() {
         numberDisplay.setText(String.format(Locale.US, "%d", RANDOM_NUMBER));
         numberDisplay.setTextColor(Color.parseColor("#FF000000"));
     }
 
+    /**
+     * This method sets the color of the numberDisplay TextView to green.
+     */
     private void setNumberDisplayGreen() {
         numberDisplay.setTextColor(Color.parseColor("#FF99CC00"));
     }
 
+    /**
+     * This method sets the color of the numberDisplay TextView to red.
+     */
     private void setNumberDisplayRed() {
         numberDisplay.setTextColor(Color.parseColor("#FFD50000"));
     }
 
+    /**
+     * This method makes a Toast.
+     * @param context The Context instance passed to this method.
+     * @param toastMsg The message to be printed in the Toast.
+     */
     private void makeToast(Context context, String toastMsg) {
         Toast.makeText(context, toastMsg, Toast.LENGTH_SHORT).show();
     }
