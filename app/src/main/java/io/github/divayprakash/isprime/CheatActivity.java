@@ -15,15 +15,30 @@ import android.widget.TextView;
  */
 public class CheatActivity extends AppCompatActivity {
 
+    /**
+     * TextView variable representing the object to display the cheat activity
+     * title in.
+     */
     private TextView cheatTitle;
+    /**
+     * TextView variable representing the object to display the cheat answer in.
+     */
     private TextView cheatDisplay;
+    /**
+     * int variable to be initialised to the value passed by MainActivity.
+     */
     private int RANDOM_NUMBER;
+    /**
+     * boolean variable representing whether cheat has been taken or not.
+     */
     private boolean IS_CHEAT_TAKEN;
 
     /**
      * This method is called at the startup of the application. It sets the
-     * view to the XML file associated with this Activity. The method also
-     * enables the back button on the action bar.
+     * view to the XML file associated with this Activity. It obtains the
+     * RANDOM_NUMBER variable from the Intent passed by MainActivity and
+     * sets the cheat state according to the IS_CHEAT_TAKEN variable obtained
+     * from the savedInstanceState.
      * @param savedInstanceState The saved instance state of the application.
      */
     @Override
@@ -45,6 +60,10 @@ public class CheatActivity extends AppCompatActivity {
         }
     }
 
+    /**
+     * This method checks if the RANDOM_NUMBER is prime or not and accordingly
+     * sets visible all data in the Activity.
+     */
     public void showCheat() {
         cheatTitle.setVisibility(View.VISIBLE);
         boolean IS_PRIME = isPrime();
@@ -57,12 +76,22 @@ public class CheatActivity extends AppCompatActivity {
         cheatDisplay.setVisibility(View.VISIBLE);
     }
 
+    /**
+     * This method is called during application destruction and is used to
+     * store the instance state so as to be able to restore it at the next
+     * initialization.
+     * @param savedInstanceState The saved instance state of the application.
+     */
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         savedInstanceState.putBoolean("IsCheatTaken", IS_CHEAT_TAKEN);
         super.onSaveInstanceState(savedInstanceState);
     }
 
+    /**
+     * This method sets the values in the Intent to be returned to MainActivity
+     * and ends the Activity by calling finish().
+     */
     private void setIntentValues(){
         Intent intent = getIntent();
         if (IS_CHEAT_TAKEN) {
@@ -74,11 +103,21 @@ public class CheatActivity extends AppCompatActivity {
         finish();
     }
 
+    /**
+     * This is the onClick handler for the "Show Cheat" button. It calls the
+     * showCheat() method after setting the cheat state to true.
+     * @param view The View instance passed to this method.
+     */
     public void onShowCheat(View view) {
         IS_CHEAT_TAKEN = true;
         showCheat();
     }
 
+    /**
+     * This method checks if the RANDOM_NUMBER is prime or not and returns a
+     * Boolean value.
+     * @return Boolean value
+     */
     private boolean isPrime() {
         for (int Divisor = 2; Divisor < RANDOM_NUMBER / 2; Divisor++) {
             if (RANDOM_NUMBER % Divisor == 0) return false;
@@ -101,6 +140,10 @@ public class CheatActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * This method is the onClick handler for the device back button. It sets
+     * the intent values by calling setIntentValues().
+     */
     @Override
     public void onBackPressed() {
         setIntentValues();
