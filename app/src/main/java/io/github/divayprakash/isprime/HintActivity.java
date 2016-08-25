@@ -7,7 +7,7 @@ import android.view.MenuItem;
 
 /**
  * The HintActivity class implements the control logic for the hint screen
- * displayed when the user presses the "Hint" button.
+ * displayed when the user presses the 'Hint' button.
  *
  * @author Divay Prakash
  */

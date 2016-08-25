@@ -9,7 +9,7 @@ import android.widget.TextView;
 
 /**
  * The CheatActivity class implements the control logic for the hint screen
- * displayed when the user presses the "Cheat" button.
+ * displayed when the user presses the 'Cheat' button.
  *
  * @author Divay Prakash
  */
@@ -104,7 +104,7 @@ public class CheatActivity extends AppCompatActivity {
     }
 
     /**
-     * This is the onClick handler for the "Show Cheat" button. It calls the
+     * This is the onClick handler for the 'Show Cheat' button. It calls the
      * showCheat() method after setting the cheat state to true.
      * @param view The View instance passed to this method.
      */
