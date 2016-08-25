@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
     private Vibrator vibratorInstance;
     /**
      * int variable representing the request code for the call to HintActivity
-     * by MainActivity on pressing the "Hint" button.
+     * by MainActivity on pressing the 'Hint' button.
      */
     private static final int HINT_REQUEST = 1;
     /**
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
     private Button hintButton;
     /**
      * int variable representing the request code for the call to CheatActivity
-     * by MainActivity on pressing the "Cheat" button.
+     * by MainActivity on pressing the 'Cheat' button.
      */
     private static final int CHEAT_REQUEST = 2;
     /**
@@ -125,7 +125,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This is the onClick action handler for the "Next" button. It calls the
+     * This is the onClick action handler for the 'Next' button. It calls the
      * returnRandom() method to assign a new random value to the RANDOM_NUMBER
      * variable. Thereafter, it calls the isPrime() method to determine if
      * RANDOM_NUMBER is prime or not. It then sets the numberDisplay TextView.
@@ -144,7 +144,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This is the onClick action handler for the "True" button. It checks the
+     * This is the onClick action handler for the 'True' button. It checks the
      * IS_PRIME variable to determine if the answer given is correct or not.
      * Accordingly, it sets the numberDisplay TextView color using
      * TextView.setTextColor() method. It also displays a Toast with a
@@ -166,7 +166,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This is the onClick action handler for the "False" button. It checks the
+     * This is the onClick action handler for the 'False' button. It checks the
      * IS_PRIME variable to determine if the answer given is correct or not.
      * Accordingly, it sets the numberDisplay TextView color using
      * TextView.setTextColor() method. It also displays a Toast with a
@@ -188,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This is the onClick action handler for the "Cheat" button. It creates an
+     * This is the onClick action handler for the 'Cheat' button. It creates an
      * instance of the Intent class and uses it to launch the CheatActivity.
      * Also, it passes the RANDOM_NUMBER to the CheatActivity using the
      * putExtra() method of the Intent instance.
@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This is the onClick action handler for the "Hint" button. It creates an
+     * This is the onClick action handler for the 'Hint' button. It creates an
      * instance of the Intent class and uses it to launch the HintActivity.
      * @param view The view instance passed to this method.
      */
@@ -315,7 +315,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * This is the onClick action handler for the "Exit" FAB button. It calls
+     * This is the onClick action handler for the 'Exit' FAB button. It calls
      * the Android finish() method to safely end application execution and
      * thereafter calls System.exit() to clean up variables etc.
      * @param view The View instance passed to this method.
