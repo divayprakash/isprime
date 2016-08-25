@@ -15,8 +15,7 @@ public class HintActivity extends AppCompatActivity {
 
     /**
      * This method is called at the startup of the application. It sets the
-     * view to the XML file associated with this Activity. The method also
-     * enables the back button on the action bar.
+     * view to the XML file associated with this Activity.
      * @param savedInstanceState The saved instance state of the application.
      */
     @Override
@@ -25,6 +24,10 @@ public class HintActivity extends AppCompatActivity {
         setContentView(R.layout.activity_hint);
     }
 
+    /**
+     * This method sets the values in the Intent to be returned to MainActivity
+     * and ends the Activity by calling finish().
+     */
     private void setIntentValues(){
         Intent intent = getIntent();
         setResult(RESULT_OK, intent);
@@ -46,6 +49,10 @@ public class HintActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    /**
+     * This method is the onClick handler for the device back button. It sets
+     * the intent values by calling setIntentValues().
+     */
     @Override
     public void onBackPressed() {
         setIntentValues();
